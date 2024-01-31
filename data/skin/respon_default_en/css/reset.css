@@ -1,0 +1,91 @@
+@charset "utf-8";
+/*
+font-family:'Pretendard','Noto Sans KR', 'Malgun Gothic', '맑은 고딕', dotum, sans-serif;
+font-family:'Noto Sans KR', 'Malgun Gothic', '맑은 고딕', dotum, sans-serif;
+*/
+@import url('//cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+/* @import url('//fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap'); */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, a {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	/*font-size: 12px;*/
+	font-family:'Pretendard','Noto Sans KR', 'Malgun Gothic', '맑은 고딕', dotum, sans-serif;
+}
+input, button {
+   -webkit-appearance: none;
+   -webkit-border-radius: 0;
+}
+
+* {margin:0; padding:0;}
+body {margin:0; padding:0; background-color:#fff; color:#666; font-style:normal; font-size:12px; font-family:'Pretendard','Noto Sans KR', 'Malgun Gothic', '맑은 고딕', dotum, sans-serif; letter-spacing:-0.2px; word-break:keep-all;}
+
+div, ul, ol, li, dl, dt, dd, form, fieldset, input,textarea, button, p, h1, h2, h3, h4, h5, h6, blockquote, iframe, th, td { margin:0; padding:0;-webkit-text-size-adjust:none}
+img {border: 0 none; vertical-align:middle; max-width:100%;}
+li {list-style:none;}
+button{background:transparent; cursor:pointer; vertical-align:middle; margin:0;}
+button,
+input[type="submit"],
+input[type="button"] {
+  background: transparent;
+  cursor: pointer;
+  overflow: visible; /* 모든 브라우저에 적용됨 */
+}
+button span{display:none;}
+input, button {
+   -webkit-appearance: none;
+   -webkit-border-radius: 0;
+}
+h1, h2, h3, h4, h5, h6{font-size:100%; font-style:normal;}
+
+/* table */
+table { border-collapse:collapse; border-spacing:0; width:100%; }
+th {vertical-align:middle;}
+th, td { border-collapse:collapse; }
+legend, hr { display:none; }
+caption{text-indent:-9999em;overflow:hidden;height:0;font-size:0;line-height:0; }
+
+/* form */
+form { display:inline; }
+select, input, textarea { color:#666; font-family:'Pretendard','Noto Sans KR', 'Malgun Gothic', '맑은 고딕', dotum, sans-serif; font-size:inherit; vertical-align:middle; }
+fieldset, blockquote, iframe, button { border:none; }
+
+/* font */
+i, em, u, cite {font-style:normal;}
+em{font-weight:bold;}
+
+/* link */
+a {color:#666; text-decoration:none; cursor:pointer;}
+a:visited{text-decoration: none}
+a:focus{text-decoration: none}
+a:active{text-decoration: none}
+a:hover{text-decoration: none}
+
+h2.blind {display:none; font-size:0; letter-spacing:-9999px;}
+
+.file_list img {padding-left:3px;}
+
+img{max-width:100%;}
+
+/* 에디터 속성 재정의*/
+.view_cont div, .view_cont dl, .view_cont dt, .view_cont dd, .view_cont ul, .view_cont ol, .view_cont li, .view_cont h1, .view_cont h2, .view_cont h3, .view_cont h4, .view_cont h5, .view_cont h6, .view_cont pre, .view_cont code, .view_cont p, .view_cont th, .view_cont td, .view_cont input, .view_cont select, .view_cont button {margin:auto;padding:initial;color:initial;}
+.view_cont i, .view_cont em {font-style:italic;color:initial;}
+.view_cont em {font-weight:inherit;}
+.view_cont dl, .view_cont ul, .view_cont ul li {list-style:disc;list-style-position:inside;}
+.view_cont ol, .view_cont ol li {list-style:decimal;list-style-position:inside;}
+.view_cont sup, .view_cont sub {font-size:x-small;}
+.view_cont table {border-spacing:initial;border-width:inherit;}
+.view_cont th, .view_cont td {border-spacing:initial;border-width:inherit;}

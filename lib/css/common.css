@@ -1,0 +1,14 @@
+/* 인베트 css */
+.hide {display:none !important;}
+
+
+.editor-box{position:relative}
+.editor-box .editor{display:block !important; visibility: hidden; position:absolute}
+
+/**********에러페이지***********/
+.error_cont {position:relative; min-height:900px; background:url("/lib/images/error_bg.gif") repeat-x left top;}
+.error_cont .error_form {position:absolute; left:50%; top:123px; margin-left:-450px; width:910px; height:610px; background:url("/lib/images/error_form_bg.png") no-repeat left top; text-align:center;}
+.error_cont .error_form h2 {color:#333; font-size:20px; font-weight:500; font-family: "Noto Sans KR", 'Nanum Gothic', sans-serif !important; padding:296px 0 10px;}
+.error_cont .error_form p {color:#777; font-size:14px; font-weight:400; line-height:22px; font-family: "Noto Sans KR", 'Nanum Gothic', sans-serif !important;}
+.error_cont .error_form h5 {width:156px; height:44px; border:2px solid #333; background:url("/lib/images/error_icon_arrow.png") no-repeat 118px center; margin:38px auto 0;}
+.error_cont .error_form h5 a {display:block; width:100%; height:44px; line-height:44px; color:#333; font-size:17px; font-weight:500; font-family: "Noto Sans KR", 'Nanum Gothic', sans-serif !important; text-align:left; text-indent:38px;}
