@@ -1,1289 +1,1258 @@
-<html lang="ko"><head>
-    <title>GOODTRUST</title>
-    <link rel="shortcut icon" href="/upload/conf/favicon1.ico" type="image/x-icon">
-    <link rel="icon" href="/upload/conf/favicon1.ico" type="image/x-icon">
-    
-    <meta charset="UTF-8">
-    <meta name="title" content="GOODTRUST">
-    <meta name="keywords" content="키워드 ">
-    <meta name="description" content="설명">
-    <meta name="author" content="작성자">
-    <meta name="viewport" content="width=device-width, user-scalable=no">
-    <meta name="format-detection" content="telephone=no"><!--애플전화번호링크자동설정해제-->
-    <meta property="og:title" content="대표제목">
-    <meta property="og:description" content="대표설명 ">
-    <meta property="og:image" content="/upload/conf/restmb_idxmake.jpg">
-    <meta property="twitter:title" content="대표제목">
-    <meta property="twitter:description" content="대표설명 ">
-    <meta property="twitter:image" content="/upload/conf/restmb_idxmake.jpg">
-    
-    <link rel="stylesheet" type="text/css" href="/lib/css/common.css">
-    <link rel="stylesheet" type="text/css" href="/data/skin/respon_default_en/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="/data/skin/respon_default_en/css/aos.css">
-    <link rel="stylesheet" type="text/css" href="/data/skin/respon_default_en/css/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/data/skin/respon_default_en/css/common.css"><!-- 서브 공통 css ｜ custom 금지 css -->
-    <link rel="stylesheet" type="text/css" href="/data/skin/respon_default_en/css/sub.css"><!-- 서브 공통 custom 요소 css ｜ 개별페이지 css -->
-    <link rel="stylesheet" type="text/css" href="/data/skin/respon_default_en/css/skin.css"><!-- 스킨 css ｜ 상하단·메인 -->
-    
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!-- <script src="/lib/js/jquery-2.2.4.min.js"></script> -->
-    <script src="/lib/js/jquery.validate.min.js"></script>
-    <script src="/lib/js/common.js"></script>
-    <script src="/lib/js/jquery-ui.min.js"></script>
-    <script src="/lib/js/moment-with-locales.min.js"></script>
-    <script src="//ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script><script charset="UTF-8" type="text/javascript" src="//t1.daumcdn.net/postcode/api/core/221018/1666013742754/221018.js"></script>
-    <link rel="stylesheet" type="text/css" href="/data/skin/respon_default_en/css/slick.css">
-    <script src="/data/skin/respon_default_en/js/slick.js"></script>
-    <!--#script src="../js/ui_common.js"></script-->
-    <script src="/data/skin/respon_default_en/js/aos.js"></script>
-    
-    <!-- swiper -->	
-    <link rel="stylesheet" type="text/css" href="/data/skin/respon_default_en/css/swiper.css">
-    <link rel="stylesheet" type="text/css" href="/data/skin/respon_default_en/css/swiper-bundle.min.css">
-    
-    <script src="/data/skin/respon_default_en/js/swiper.js"></script>
-    <script src="/data/skin/respon_default_en/js/swiper-bundle.min.js"></script>
-    <!-- swiper -->	
-    
-    <script src="/data/skin/respon_default_en/js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script type="text/javascript">
-        var CURRENT_DATE = "2024-01-31 09:47:03";
-        $(function() {
-            $.validator.setDefaults({
-                onkeyup: false,
-                onclick: false,
-                onfocusout: false,
-                ignore : '.ignore',
-                showErrors: function(errorMap, errorList) {
-                    if(errorList.length < 1) {
-                        return;
-                    }
-                    alert(errorList[0].message);
-                    errorList[0].element.focus();
-                }
-            });
-    
-            //데이터 피커
-            $(".startdate").datepicker({
-                changeMonth: true,
-                changeYear: true,
-                showButtonPanel: true,
-                showMonthAfterYear: true,
-                dateFormat: "yy-mm-dd",
-                monthNames : ['1Month', 'February', 'March', 'April', 'May', 'June', 'July', 'August', '9Month', 'October', 'November', 'December'],
-                monthNamesShort : ['1Month', 'February', 'March', 'April', 'May', 'June', 'July', 'August', '9Month', 'October', 'November', 'December'],
-                dayNames : ['Sun', 'Month', 'Tue', 'Wed', 'Throat', 'Fri', 'Sat'],
-                dayNamesShort : ['Sun', 'Month', 'Tue', 'Wed', 'Throat', 'Fri', 'Sat'],
-                dayNamesMin : ['Sun', 'Month', 'Tue', 'Wed', 'Throat', 'Fri', 'Sat'],
-                onClose : function (selectedDate){
-                    $(".enddate").datepicker( 'option', 'minDate', selectedDate );
-                }
-            });
-    
-            $(".enddate").datepicker({
-                changeMonth: true,
-                changeYear: true,
-                showButtonPanel: true,
-                showMonthAfterYear: true,
-                dateFormat: "yy-mm-dd",
-                monthNames : ['1Month', 'February', 'March', 'April', 'May', 'June', 'July', 'August', '9Month', 'October', 'November', 'December'],
-                monthNamesShort : ['1Month', 'February', 'March', 'April', 'May', 'June', 'July', 'August', '9Month', 'October', 'November', 'December'],
-                dayNames : ['Sun', 'Month', 'Tue', 'Wed', 'Throat', 'Fri', 'Sat'],
-                dayNamesShort : ['Sun', 'Month', 'Tue', 'Wed', 'Throat', 'Fri', 'Sat'],
-                dayNamesMin : ['Sun', 'Month', 'Tue', 'Wed', 'Throat', 'Fri', 'Sat'],
-                onClose : function(selectedDate) {
-                    $(".startdate").datepicker( "option", "maxDate", selectedDate );
-                }
-            });
-    
-            $(".datepicker").datepicker({
-                changeMonth: true,
-                changeYear: true,
-                showButtonPanel: true,
-                showMonthAfterYear: true,
-                dateFormat: "yy-mm-dd",
-                monthNames : ['1Month', 'February', 'March', 'April', 'May', 'June', 'July', 'August', '9Month', 'October', 'November', 'December'],
-                monthNamesShort : ['1Month', 'February', 'March', 'April', 'May', 'June', 'July', 'August', '9Month', 'October', 'November', 'December'],
-                dayNames : ['Sun', 'Month', 'Tue', 'Wed', 'Throat', 'Fri', 'Sat'],
-                dayNamesShort : ['Sun', 'Month', 'Tue', 'Wed', 'Throat', 'Fri', 'Sat'],
-                dayNamesMin : ['Sun', 'Month', 'Tue', 'Wed', 'Throat', 'Fri', 'Sat']
-            });
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>GOODTRUST</title>
+<link rel="shortcut icon" href="/upload/conf/favicon1.ico" type="image/x-icon" />
+<link rel="icon" href="/upload/conf/favicon1.ico" type="image/x-icon" />
+
+<meta charset="UTF-8">
+<meta name="title" content="GOODTRUST" />
+<meta name="keywords" content="키워드 ">
+<meta name="description" content="설명">
+<meta name="author" content="작성자">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<meta name="format-detection" content="telephone=no" /><!--애플전화번호링크자동설정해제-->
+<meta property="og:title" content="대표제목" />
+<meta property="og:description" content="대표설명 " />
+<meta property="og:image" content="/upload/conf/restmb_idxmake.jpg" />
+<meta property="twitter:title" content="대표제목" />
+<meta property="twitter:description" content="대표설명 " />
+<meta property="twitter:image" content="/upload/conf/restmb_idxmake.jpg" />
+
+<link rel="stylesheet" type="text/css" href="/lib/css/common.css" />
+<link rel="stylesheet" type="text/css" href="/data/skin/respon_default_en/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="/data/skin/respon_default_en/css/aos.css" />
+<link rel="stylesheet" type="text/css" href="/data/skin/respon_default_en/css/animate.min.css" />
+<link rel="stylesheet" type="text/css" href="/data/skin/respon_default_en/css/common.css" /><!-- 서브 공통 css ｜ custom 금지 css -->
+<link rel="stylesheet" type="text/css" href="/data/skin/respon_default_en/css/sub.css" /><!-- 서브 공통 custom 요소 css ｜ 개별페이지 css -->
+<link rel="stylesheet" type="text/css" href="/data/skin/respon_default_en/css/skin.css" /><!-- 스킨 css ｜ 상하단·메인 -->
+
+<script src="/lib/js/jquery.min.js"></script>
+<script src="/lib/js/jquery.validate.min.js"></script>
+<script src="/lib/js/common.js"></script>
+<script src="/lib/js/jquery-ui.min.js"></script>
+<script src="/lib/js/moment-with-locales.min.js"></script>
+<script src="//ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
+<link rel="stylesheet" type="text/css" href="/data/skin/respon_default_en/css/slick.css">
+<script src="/data/skin/respon_default_en/js/slick.js"></script>
+<!--#script src="../js/ui_common.js"></script-->
+<script src="/data/skin/respon_default_en/js/aos.js"></script>
+
+<!-- swiper -->	
+<link rel="stylesheet" type="text/css" href="/data/skin/respon_default_en/css/swiper.css" />
+<link rel="stylesheet" type="text/css" href="/data/skin/respon_default_en/css/swiper-bundle.min.css" />
+
+<script src="/data/skin/respon_default_en/js/swiper.js"></script>
+<script src="/data/skin/respon_default_en/js/swiper-bundle.min.js"></script>
+<!-- swiper -->	
+
+<script src="/data/skin/respon_default_en/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript">
+	var CURRENT_DATE = "2024-01-31 11:28:15";
+	$(function() {
+		$.validator.setDefaults({
+			onkeyup: false,
+			onclick: false,
+			onfocusout: false,
+			ignore : '.ignore',
+			showErrors: function(errorMap, errorList) {
+				if(errorList.length < 1) {
+					return;
+				}
+				alert(errorList[0].message);
+				errorList[0].element.focus();
+			}
+		});
+
+		//데이터 피커
+		$(".startdate").datepicker({
+			changeMonth: true,
+			changeYear: true,
+			showButtonPanel: true,
+			showMonthAfterYear: true,
+			dateFormat: "yy-mm-dd",
+			monthNames : ['1Month', 'February', 'March', 'April', 'May', 'June', 'July', 'August', '9Month', 'October', 'November', 'December'],
+			monthNamesShort : ['1Month', 'February', 'March', 'April', 'May', 'June', 'July', 'August', '9Month', 'October', 'November', 'December'],
+			dayNames : ['Sun', 'Month', 'Tue', 'Wed', 'Throat', 'Fri', 'Sat'],
+			dayNamesShort : ['Sun', 'Month', 'Tue', 'Wed', 'Throat', 'Fri', 'Sat'],
+			dayNamesMin : ['Sun', 'Month', 'Tue', 'Wed', 'Throat', 'Fri', 'Sat'],
+			onClose : function (selectedDate){
+				$(".enddate").datepicker( 'option', 'minDate', selectedDate );
+			}
+		});
+
+		$(".enddate").datepicker({
+			changeMonth: true,
+			changeYear: true,
+			showButtonPanel: true,
+			showMonthAfterYear: true,
+			dateFormat: "yy-mm-dd",
+			monthNames : ['1Month', 'February', 'March', 'April', 'May', 'June', 'July', 'August', '9Month', 'October', 'November', 'December'],
+			monthNamesShort : ['1Month', 'February', 'March', 'April', 'May', 'June', 'July', 'August', '9Month', 'October', 'November', 'December'],
+			dayNames : ['Sun', 'Month', 'Tue', 'Wed', 'Throat', 'Fri', 'Sat'],
+			dayNamesShort : ['Sun', 'Month', 'Tue', 'Wed', 'Throat', 'Fri', 'Sat'],
+			dayNamesMin : ['Sun', 'Month', 'Tue', 'Wed', 'Throat', 'Fri', 'Sat'],
+			onClose : function(selectedDate) {
+				$(".startdate").datepicker( "option", "maxDate", selectedDate );
+			}
+		});
+
+		$(".datepicker").datepicker({
+			changeMonth: true,
+			changeYear: true,
+			showButtonPanel: true,
+			showMonthAfterYear: true,
+			dateFormat: "yy-mm-dd",
+			monthNames : ['1Month', 'February', 'March', 'April', 'May', 'June', 'July', 'August', '9Month', 'October', 'November', 'December'],
+			monthNamesShort : ['1Month', 'February', 'March', 'April', 'May', 'June', 'July', 'August', '9Month', 'October', 'November', 'December'],
+			dayNames : ['Sun', 'Month', 'Tue', 'Wed', 'Throat', 'Fri', 'Sat'],
+			dayNamesShort : ['Sun', 'Month', 'Tue', 'Wed', 'Throat', 'Fri', 'Sat'],
+			dayNamesMin : ['Sun', 'Month', 'Tue', 'Wed', 'Throat', 'Fri', 'Sat']
+		});
+	});
+</script>
+<link rel="stylesheet" type="text/css" href="/data/skin/respon_default_en/css/cssreset-context-min.css"><!-- 에디터 css -->
+
+
+</head>
+<body>
+<div class="skip_nav">
+	<a href="#header" class="skip_nav_link">상단메뉴 바로가기</a>
+	<a href="#content" class="skip_nav_link">본문 바로가기</a>
+	<a href="#sub_nav" class="skip_nav_link">본문 하위메뉴 바로가기</a>
+	<a href="#footer" class="skip_nav_link">하단 바로가기</a>
+</div><!-- 웹접근성용 바로가기 링크 모음 -->
+<article id="wrap" class="clear main_index">
+<div id="header" class="">
+	<div class="header_cont">
+		<h1 class="hd_logo"><a href="/" title="Logo">GOODTRUST</a></h1>
+		<ul class="hd_lnb">
+			<li class="">
+				<a href="/company/about">About Us</a>
+					<ul class="hd_lnb_dep2">
+						<li class="dep2"><a href="/company/about#1">CEO MESSAGE</a></li>
+						<li class="dep2"><a href="/company/about#2">CORE VALUE</a></li>
+						<li class="dep2"><a href="/company/about#3">HISTORY</a></li>
+						<li class="dep2"><a href="/company/about#4">CUSTOMERS</a></li>
+						<li class="dep2"><a href="/company/about#5">LOCATION</a></li>
+					</ul>
+			</li>
+			<li class="">
+				<a href="/company/oem">Businesses</a>
+					<ul class="hd_lnb_dep2">
+						<li class="dep2"><a href="/company/oem#1">OEM</a></li>
+						<li class="dep2"><a href="/company/oem#2">ODM</a></li>
+						<li class="dep2"><a href="/company/oem#3">PROCESS</a></li>
+						<li class="dep2"><a href="/company/oem#4">SUSTAINABILITY</a></li>
+					</ul>
+			</li>
+			<li class="">
+				<a href="/company/product">Products</a>
+					<ul class="hd_lnb_dep2">
+						<li class="dep2"><a href="/company/product#1">CLOTHING</a></li>
+						<li class="dep2"><a href="/company/product#2">FABRIC</a></li>
+						<li class="dep2"><a href="/company/product#3">TRIM</a></li>
+					</ul>
+			</li>
+			<li class="">
+				<a href="/board/board_list?code=social">Sustainability</a>
+					<ul class="hd_lnb_dep2">
+						<li class="dep2"><a href="/board/board_list?code=social#1">SOCIAL CONTRIBUTION</a></li>
+					</ul>
+			</li>
+			<li class="">
+				<a href="/board/board_list?code=research">Development</a>
+					<ul class="hd_lnb_dep2">
+						<li class="dep2"><a href="/board/board_list?code=research#1">DEVELOPMENT IDEA</a></li>
+					</ul>
+			</li>
+			<li class="">
+				<a href="/board/board_write?code=inquiry">Contact Us</a>
+					<ul class="hd_lnb_dep2">
+						<li class="dep2"><a href="/board/board_write?code=inquiry#1">ENQUIRY</a></li>
+						<li class="dep2"><a href="/board/board_list?code=faq#2">FAQ</a></li>
+					</ul>
+			</li>
+		</ul>
+		<div class="hd_right">
+			<ul class="hd_gnb dn">
+				<li><a href="/member/login">LOGIN</a></li> 
+				<li><a href="/member/join_agreement">JOIN</a></li>
+				<li class="search"><a href="/goods/goods_search?search=">search</a></li>
+			</ul>	
+			<ul class="hd_lang">
+				<li>
+					<a href="#;"><span>ENG</span></a>
+					<ul>
+						<li><a href="/?language=kor" onclick="">kor</a></li>
+						<li><a href="/?language=eng" onclick="">eng</a></li>
+					</ul>
+				</li>
+			</ul>
+			<a class="menu-trigger" href="#"><span></span><span></span><span></span></a>
+		</div>
+	</div>
+	<div class="right_quick">
+		<ul>
+			<li>
+				<a href="tel:051-526-4018">Phone</a>
+				<div class="tel_layer">
+					<dl>
+						<dt>Phone</dt>
+						<dd>
+							<strong><a href="tel:051-526-4018">+82.51.526.4018</a></strong>
+							<p>weekdays 09:00 - 18:00</p>
+						</dd>
+					</dl>
+				</div>
+			</li>
+			<li><a href="mailto:sales@goodtrust.co.kr">E-mail</a></li>
+			<li><a href="../board/board_write?code=inquiry">Enquiry</a></li>
+		</ul>
+		<button class="scroll_top" onclick="$('html, body').stop().animate( { scrollTop : '0' }, 800 );">TOP</button>
+	</div>
+</div>
+<div class="aside_bg"></div>
+<aside id="aside">
+	<div class="aside_box">
+		<div class="btn_aside_close"><a class="menu-trigger2 active-1" href="#">Close</a></div>
+		<h1 class="aside_logo"><a href="/">GOODTRUST</a></h1>
+		<ul class="slide menu slidemenu">
+			<li class="depth1_li group_tit"><a href="/company/about" class="depth1_a">About Us</a><span class="icons"></span>
+				<ul class="depth">
+					<li class="depth2_li"><a href="/company/about">CEO MESSAGE</a></li><!-- 하위메뉴 없을 때 -->
+					<li class="depth2_li"><a href="/company/about">CORE VALUE</a></li><!-- 하위메뉴 없을 때 -->
+					<li class="depth2_li"><a href="/company/about">HISTORY</a></li><!-- 하위메뉴 없을 때 -->
+					<li class="depth2_li"><a href="/company/about">CUSTOMERS</a></li><!-- 하위메뉴 없을 때 -->
+					<li class="depth2_li"><a href="/company/about">LOCATION</a></li><!-- 하위메뉴 없을 때 -->
+				</ul>
+			</li>
+			<li class="depth1_li group_tit"><a href="/company/oem" class="depth1_a">Businesses</a><span class="icons"></span>
+				<ul class="depth">
+					<li class="depth2_li"><a href="/company/oem">OEM</a></li><!-- 하위메뉴 없을 때 -->
+					<li class="depth2_li"><a href="/company/oem">ODM</a></li><!-- 하위메뉴 없을 때 -->
+					<li class="depth2_li"><a href="/company/oem">PROCESS</a></li><!-- 하위메뉴 없을 때 -->
+					<li class="depth2_li"><a href="/company/oem">SUSTAINABILITY</a></li><!-- 하위메뉴 없을 때 -->
+				</ul>
+			</li>
+			<li class="depth1_li group_tit"><a href="/company/product" class="depth1_a">Products</a><span class="icons"></span>
+				<ul class="depth">
+					<li class="depth2_li"><a href="/company/product">CLOTHING</a></li><!-- 하위메뉴 없을 때 -->
+					<li class="depth2_li"><a href="/company/product">FABRIC</a></li><!-- 하위메뉴 없을 때 -->
+					<li class="depth2_li"><a href="/company/product">TRIM</a></li><!-- 하위메뉴 없을 때 -->
+				</ul>
+			</li>
+			<li class="depth1_li group_tit"><a href="/board/board_list?code=social" class="depth1_a">Sustainability</a><span class="icons"></span>
+				<ul class="depth">
+					<li class="depth2_li"><a href="/board/board_list?code=social">SOCIAL CONTRIBUTION</a></li><!-- 하위메뉴 없을 때 -->
+				</ul>
+			</li>
+			<li class="depth1_li group_tit"><a href="/board/board_list?code=research" class="depth1_a">Development</a><span class="icons"></span>
+				<ul class="depth">
+					<li class="depth2_li"><a href="/board/board_list?code=research">DEVELOPMENT IDEA</a></li><!-- 하위메뉴 없을 때 -->
+				</ul>
+			</li>
+			<li class="depth1_li group_tit"><a href="/board/board_write?code=inquiry" class="depth1_a">Contact Us</a><span class="icons"></span>
+				<ul class="depth">
+					<li class="depth2_li"><a href="/board/board_write?code=inquiry">ENQUIRY</a></li><!-- 하위메뉴 없을 때 -->
+					<li class="depth2_li"><a href="/board/board_list?code=faq">FAQ</a></li><!-- 하위메뉴 없을 때 -->
+				</ul>
+			</li>
+		</ul>
+		<ul class="hd_lang">
+			<li><a href="/?language=kor" onclick="">kor</a></li>
+			<li><a href="/?language=eng" onclick="">eng</a></li>
+		</ul>
+	</div>
+</aside><!-- #aside 상단영역 -->
+<script>
+$(function() {
+	//언어선택
+	$("#header .hd_lang li a").on("click", function(){
+		$(this).toggleClass("on").next("ul").stop().slideToggle();
+	});
+	$(document).mouseup(function (e){
+		//select ul 닫기
+		var hd_lang = $('.hd_lang li a');
+		if(hd_lang.has(e.target).length === 0){
+			hd_lang.removeClass("on").next("ul").stop().slideUp();
+		}
+	});
+	//lnb 2depth
+	$('#header .hd_lnb > li').each(function(){
+		
+		$(this).mouseenter(function(){
+			$(this).addClass('slide_on');
+
+			if ( $(this).hasClass('slide_on') ){
+			$('#header .hd_lnb_dep2').stop().slideUp(300);
+			$(this).children('.hd_lnb_dep2').stop().slideDown(300);
+		} else {
+			$(this).children('.hd_lnb_dep2').stop().slideUp(300);
+		};
+		});
+		$(this).mouseleave(function(){
+			$(this).removeClass('slide_on');
+			$(this).children('.hd_lnb_dep2').stop().slideUp(300);
+		});
+		
+	});	
+	var itval;
+
+	// aside close
+	function aside_close() {
+		$('#aside').removeClass('on');
+		$('.aside_bg').removeClass('on');
+		clearTimeout(itval);
+		itval = setTimeout(function () {
+			$('.aside_bg').addClass('dn');
+			$('body').css({'overflow':'inherit','height':'auto'});
+		}, 800);
+	}
+	
+	// aside open
+	function aside_open() {
+		$('#aside').addClass('on');
+		$('.aside_bg').removeClass('dn');
+		clearTimeout(itval);
+		$('body').css({'overflow':'hidden','height':'100%'});
+		itval = setTimeout(function () {
+			$('.aside_bg').addClass('on');
+		}, 20);
+	}
+	
+	// aside on/off
+	$('.menu-trigger, .btn_aside_close').each(function(e){
+		$(this).on('click', function(e){
+			e.preventDefault();
+			$('.menu-trigger').toggleClass('active-1');
+			if ($('#aside').hasClass('on')) {
+				aside_close();
+			} else {
+				aside_open();
+			}
+		});
+		$('.aside_bg').on('click', function(){
+			$('.menu-trigger').removeClass('active-1');
+			aside_close();
+		});
+	});
+	
+	//카테고리 메뉴
+	$("li.group_tit .icons").on("click", function(e) {
+		//e.preventDefault();
+		$(this).parent().siblings().children().next().next().slideUp(function() {
+			//$(this).parent("li").siblings("li").removeClass("on");
+		});
+		$(this).parent().addClass("on").siblings("li").removeClass("on");
+		$(this).siblings("ul").slideToggle(function() {
+			if($(this).is(":visible") == false) $(this).parent("li").removeClass("on");
+		});
+		if($(this).parent().closest('li').find('ul').children().length == 0) {
+			return true;	
+		} else {
+			return false;
+		}
+	});
+	
+	// container top padding 
+	var hd_h = $('#wrap #header').outerHeight();
+	$('#wrap #container').css({'padding-top':hd_h});
+
+	// header animate 
+	$('#wrap #header').addClass('hd_move');
+
+	// header on
+	$('#header').removeClass('on');
+
+
+	var lastScrollTop = 0,
+		 delta = 36;
+	$(window).scroll(function(){
+		/*if ( $(this).scrollTop() > 1 ) {
+			$('#header, .right_quick').addClass('on');
+		} else {
+			$('#header, .right_quick').removeClass('on');
+		}*/
+		var st = $(this).scrollTop();
+		if (Math.abs(lastScrollTop - st) <= delta) return;
+		if ( (st <= delta) ) {
+			$("#header").removeClass('on');
+		} else {
+			$("#header").addClass('on');
+		};
+		if ( (st > lastScrollTop) && (st > hd_h ) ) {//&& (lastScrollTop > 0)
+			if($('.hd_bnr').hasClass('hide')) {
+				$(".right_quick").addClass('scrdown');
+			} else {
+				$(".right_quick").addClass('scrdown');
+			};
+		} else {
+			$(".right_quick").removeClass('scrdown');
+		}
+		lastScrollTop = st;
+		//스크롤 최하단 도착 시
+		var st = $(this).scrollTop();
+		var innerHeight = $(window).innerHeight();
+		var scrollHeight = $('body').prop('scrollHeight');
+		if ((st + innerHeight == scrollHeight)) {
+			$("#header").addClass("end");
+		} else {
+			$("#header").removeClass("end");
+		}
+	});
+	$(window).resize(function() {
+		// 컨텐츠 상단 padding 
+		var hd_h = $('#wrap #header').outerHeight();
+		$('#wrap #container').css({'padding-top':hd_h});
+	});
+
+	
+	if ( $(window).width() >= 640 ){
+		$('.sub_menu .sub_cate').removeClass('sub_toggle_dep on');
+	} else {
+		$('.sub_menu .sub_cate').addClass('sub_toggle_dep');
+	}
+	$(window).resize( function(){
+		if ( $(window).width() >= 640 ){
+			$('.sub_menu .sub_cate').removeClass('sub_toggle_dep on');
+		} else {
+			$('.sub_menu .sub_cate').addClass('sub_toggle_dep');
+		}
+	});
+	$('.sub_cate_go').each(function(){
+		$(this).click(function(){
+			if($(this).next('.sub_toggle_dep').hasClass('on')) {
+				$(this).next('.sub_toggle_dep').removeClass('on');
+			} else {
+				$('.sub_toggle_dep').removeClass('on');
+				$(this).next('.sub_toggle_dep').addClass('on');
+			}
+		});
+	});
+	/*$(document).click(function(e){
+		if (!$(e.target).is('.navi_step dt') && !$(e.target).is('.navi_step dd') ){
+			$('.navi_step, .navi_step dd').removeClass('on');
+		}
+		if (!$(e.target).is('.sub_cate_go') && !$(e.target).is('.sub_cate') ){
+			$('.sub_cate').removeClass('on');
+		}
+	});*/
+
+
+});
+</script>
+	<article id="container" class="clear">
+		<!-- 측면 시작 #aside -->
+		<!-- 측면 끝 #aside -->
+		<div id="contents_wrap" class="clear">
+			<div id="contents_box">
+				<!-- #네비게이션 시작 .nav_wrap -->
+				<!-- #네비게이션 끝 .nav_wrap -->
+
+				<!-- 컨텐츠 시작 #contents -->
+				<div id="content" class="clear ">
+					<!-- #공통 상단요소 시작 -->
+					<!-- #공통 상단요소 끝 -->
+					<!-- #서브 컨텐츠 시작 -->
+<script>
+var noShow = function(checkbox){
+	var no = checkbox.value;
+	if(checkbox.checked){
+		Cookie.setCookie("popup_"+no, 'y', 1);
+	}else{
+		Cookie.setCookie("popup_"+no, 'y', -1);
+	}
+};
+var winWidth = $(window).width();
+</script>
+
+<style>
+#contents_wrap {width:100%;padding-left:0 !important;padding-right:0 !important;}
+#contents_wrap #contents_box {padding:0;}
+#wrap {padding-top:0;}
+#header{box-shadow:none;}
+</style>
+<!-- 메인 이미지 슬라이드 -->
+<div class="main_visual">
+	<ul class="visual_ul">
+	</ul>
+	<button type="button" class="prev">PREV</button>
+	<button type="button" class="next">NEXT</button>
+	<div class="visual_option_wrap">
+		<svg class="progress-svg" width="82" height="82">
+			<g transform="translate(41,41)">
+				<circle class="circle-bg CirProgress" r="40" cx="0" cy="0"></circle>
+				<circle class="circle-go CirProgress" r="40" cx="0" cy="0"></circle>
+			</g>
+			<g transform="translate(41,41)">
+				<circle class="circle-bg2 CirProgress" r="40" cx="0" cy="0"></circle>
+				<circle class="circle-go2 CirProgress" r="40" cx="0" cy="0"></circle>
+			</g>
+		</svg>
+		<div class="slide_count">0<span class="current">1</span></div>
+	</div>
+</div>
+<script type="text/javascript">
+	var confData = JSON.parse('{"form":"responsive","fixed":{"mode":"horizontal","time":"8","speed":"800"},"responsive":{"pc":{"mode":"horizontal","time":"8","speed":"800","width":"1024"},"tablet":{"mode":"horizontal","time":"8","speed":"800","width":"640"},"mobile":{"mode":"horizontal","time":"8","speed":"800"}},"files":{"responsive":{"pc":[{"oname":"20230104120834_3254.jpg","fname":"20230109163214_5420.jpg","link":""},{"oname":"20221220174325_7171.jpg","fname":"20230109163216_4323.jpg","link":""},{"oname":"20221220174328_5712.jpg","fname":"20230109163217_6180.jpg","link":""}],"tablet":[{"oname":"20230104120834_3254.jpg","fname":"20230109163222_6611.jpg","link":""},{"oname":"20221220174325_7171.jpg","fname":"20230109163224_5374.jpg","link":""},{"oname":"20221220174328_5712.jpg","fname":"20230109163226_3729.jpg","link":""}],"mobile":[{"oname":"20230104121059_9751.jpg","fname":"20230109163231_2150.jpg","link":""},{"oname":"20221221115231_1795.jpg","fname":"20230109163233_7924.jpg","link":""},{"oname":"20221221115233_7713.jpg","fname":"20230109163235_8724.jpg","link":""}]},"responsive_length":["","",""]}}');
+		confData.files = confData.files || {};
+	$(window).resize(function() {
+		// 팝업 이벤트 호출
+	});
+	// 메인 비주얼 
+	$(".main_visual").each(function  () {
+		var $slideVisual = $(this).children(".visual_ul");
+		var $slideTxt = $(this).children(".txt_box");
+
+		$slideVisual.on('init',function (event, slick) {
+			setTimeout(function  () {
+				$(".slick-slide").eq(0).addClass("active");
+			},500);
+		});
+
+		$slideVisual.on('afterChange',function  (event, slick, currentSlide) {
+			$(".slick-slide").removeClass("active");
+			$(this).find(".slick-slide").eq(currentSlide).addClass("active");
+		});
+
+	});
+	$(".main_visual .visual_ul").on('beforeChange', function(event, slick, currentSlide, nextSlide){
+		var target = $(".main_visual .CirProgress");
+		$(".main_visual circle").removeClass("CirProgress");
+		target.outerWidth(),
+		$(".main_visual circle").addClass("CirProgress");
+	});
+
+
+	$(document).ready(function($) {
+
+		var sliderTimer = 8000;
+		var beforeEnd = 500;
+		var $imageSlider = $('.visual_ul');
+
+			/* 반응형 js */
+			// confData.responsive 가 없을경우 초기화
+			confData.responsive = confData.responsive || {};
+			confData.responsive.pc = confData.responsive.pc || {};
+			confData.responsive.tablet = confData.responsive.tablet || {};
+			confData.responsive.mobile = confData.responsive.mobile || {};
+			confData.files.responsive = confData.files.responsive || {};
+			var currMod = '';
+
+			function slideResize()
+			{
+				var width = $(window).width();
+
+				var mode = 'mobile';
+				if(width >= Number(confData.responsive.pc.width)){
+					mode = 'pc';
+				} else if(width >= Number(confData.responsive.tablet.width)){
+					mode = 'tablet';
+				}
+
+				if(currMod !== mode){
+					if(currMod !== ''){
+						$('.visual_ul').slick('unslick');
+					}
+					currMod = mode;
+					$('.visual_ul').html(makeLiTag(mode, (confData.files.responsive[mode] || [])));
+					$('.visual_ul').one('init', function(event, slick) {
+						$('.total').text(slick.slideCount);
+					})
+					.slick({
+						vertical: (confData.responsive[mode].mode === 'vertical'),
+						fade: (confData.responsive[mode].mode === 'fade'),
+						speed: Number(confData.responsive[mode].speed || 1000),
+						autoplaySpeed: (Number(confData.responsive[mode].time || 3)) * 1000,
+
+						// -- 아래에 추가옵션을 입력해주세요
+						autoplay: true,
+						dots: false,
+						autoplaySpeed: 8000,
+						arrows: true,
+						prevArrow: $('.main_visual .prev'),
+						nextArrow: $('.main_visual .next'),
+						pauseOnHover: false
+					});
+
+				}
+			}
+			
+			slideResize();
+				$(window).resize(function() {
+						slideResize();
+				});
+
+		// 타이머 시작 
+		function progressBar(){
+			$('.slider-progress').find('.progress').removeAttr('style');
+			$('.slider-progress').find('.progress').removeClass('active');
+			setTimeout(function(){
+				$('.slider-progress').find('.progress').css('transition-duration', (sliderTimer/1000)+'s').addClass('active');
+			}, 100);
+		}
+		progressBar();
+		$imageSlider.on('beforeChange', function(e, slick) {
+			progressBar();
+		});
+		$imageSlider.on('afterChange', function(e, slick, nextSlide) {
+			titleAnim(nextSlide);
+			$('.current').text(slick.currentSlide + 1);
+		});
+
+		function titleAnim(ele){
+			setTimeout(function(){
+			}, sliderTimer - beforeEnd);
+		}
+		titleAnim();
+		// 타이머 끝
+
+	});
+
+	function makeLiTag(type, file){
+		var path = '/upload/main/imageSlide/eng/' + (['pc', 'tablet', 'mobile'].indexOf(type) > -1? 'responsive/' + type + '/' : 'fixed/');
+		var li = '';
+		var txt = ["<h3 class='TxtAni'>We <strong>Build Trust</strong> <br>In Our Product</h3>","<h3 class='TxtAni second'>Happy Employees, <br>Happy Clients, <br>Happy Partners <br><strong>With Good Trust</strong></h3>","<h3 class='TxtAni'>Custom Clothing <br>Manufacturer <br><strong>In South Korea</strong></h3>"];
+		var txt2 = ["<p class='TxtAni'>Good Trust offers a full-scale manufacturing solution <br>with our comprehensive experience in working with numerous <br>global fashion brands.</p>","<p class='TxtAni'>Sustainability is important for all. By taking steps to create <br>a more sustainable operation, Good Trust aims to help make the world <br>a better place.</p>","<p class='TxtAni'>Experts within clothing industry work together <br>to produce reliable goods that are ‘Made in Korea.’</p>"];
+		for(var i=0; i<file.length; i++) {
+			var lnk = file[i].link ? file[i].link : "#";
+			li += '<li>';
+			li += '<a href="' + lnk + '"></a>';
+			li += '<div class="txt_box">'+ txt[i] + txt2[i];
+			li += '</div>';
+			li += '<div class="thubm" style="background-image:url(' + path + file[i].fname + ');"></a>';
+			li += '</li>';
+		}
+		return li;
+	}
+
+</script>
+<!-- //메인 이미지 슬라이드 -->
+<div class="main_content">
+	<div class="main_intro w_custom" data-aos="">
+		<div class="logo_box" data-aos="fade-right">
+			<img src="/data/skin/respon_default_en/images/skin/main_intro_logo.png" alt="">
+		</div>
+		<div class="main_tit" data-aos="fade-left">
+			<h3>Want to start a clothing brand? <br>We can help!</h3>
+			<p>Good Trust is one of Korea’s leading clothing manufacturers, producing garments for various global brands. <br>We manufacture and deliver fully custom clothing of the highest quality to your brand.</p>
+			<div class="btn_box">
+				<a href="/company/about" class="btn_common blue">View More</a>
+				<a href="/upload/Catalog_20230113.pdf" target="_blank" class="btn_common">Catalog</a>
+			</div>
+		</div>
+	</div>
+	<div class="main_cate_bnr" data-aos="fade-up">
+		<ul class="bnr_list">
+			<li>
+				<a href="./company/about" class="link"></a>
+				<span>BUSINESS</span>
+				<ul class="cate_list">
+					<li><a href="./company/oem#1" class="btn_common">OEM</a></li>
+					<li><a href="./company/oem#2" class="btn_common">ODM</a></li>
+					<li><a href="./company/oem#3" class="btn_common">PROCESS</a></li>
+					<li><a href="./company/oem#4" class="btn_common">SUSTAINABILITY</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="./company/product" class="link"></a>
+				<span>PRODUCT</span>
+				<ul class="cate_list">
+					<li><a href="./company/product#1" class="btn_common">CLOTHING</a></li>
+					<li><a href="./company/product#2" class="btn_common">FABRIC</a></li>
+					<li><a href="./company/product#3" class="btn_common">TRIMS</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="./board/board_list?code=social" class="link"></a>
+				<span>SOCIAL <br>CONTRIBUTION</span>
+				<ul class="cate_list">
+					<li><a href="./board/board_list?code=social" class="btn_common">VIEW MORE</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div class="main_service">
+		<div class="cont w_custom">
+			<div class="main_tit" data-aos="fade-right">
+				<h4>MADE IN KOREA </h4>
+				<p>Good Trust delivers the best quality product and customer satisfaction.</p>
+			</div>
+			<ul class="service_list" data-aos="fade-left">
+				<li>
+					<span><img src="/data/skin/respon_default_en/images/skin/main_service_list_icon01.png" alt=""></span>
+					<dl>
+						<dt>Low Minimum Order Quantity</dt>
+						<dd>We offer a low MOQ of 200 units for customization orders. For initial orders, we can go as low as 100 units per order. Any units falling below the MOQ will be subject to a surcharge</dd>
+					</dl>
+				</li>
+				<li>
+					<span><img src="/data/skin/respon_default_en/images/skin/main_service_list_icon02.png" alt=""></span>
+					<dl>
+						<dt>Duty Free <br>with FTA</dt>
+						<dd>By Korea-U.S. FTA, you can take advantage of duty-free U.S. import benefit on ‘Made in Korea’ clothing. </dd>
+					</dl>
+				</li>
+				<li>
+					<span><img src="/data/skin/respon_default_en/images/skin/main_service_list_icon03.png" alt=""></span>
+					<dl>
+						<dt>Strict <br>Quality Control</dt>
+						<dd>Good Trust has established <br>strict quality control system <br>and produced garments of <br>the highest quality.</dd>
+					</dl>
+				</li>
+				<li>
+					<span><img src="/data/skin/respon_default_en/images/skin/main_service_list_icon04.png" alt=""></span>
+					<dl>
+						<dt>On-time Delivery</dt>
+						<dd>Good Trust ensures the timely delivery of seasonal and high-volume products for your barnd to keep up with shifting trends and demand.</dd>
+					</dl>
+				</li>
+				<li>
+					<span><img src="/data/skin/respon_default_en/images/skin/main_service_list_icon05.png" alt=""></span>
+					<dl>
+						<dt>Reasonable Price</dt>
+						<dd>Good Trust is committed to providing garments which meet the expectations of our clients at competitive prices.</dd>
+					</dl>
+				</li>
+				<li>
+					<span><img src="/data/skin/respon_default_en/images/skin/main_service_list_icon06.png" alt=""></span>
+					<dl>
+						<dt>Excellent <br>Client Service</dt>
+						<dd>Our excellent customer service will go beyond meeting your needs and provide support in a timely and pleasant manner. </dd>
+					</dl>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="main_gallery">
+		<div class="w_custom">
+			<div class="main_tit" data-aos="fade-up">				
+				<h5>goodtrust_official</h5>
+				<a href="https://www.instagram.com/goodtrust_official/" class="btn_common" target="_blank">follow us</a>
+			</div>
+<ul class="board_ul" data-aos="fade-up">
+	<li class="board_li">
+		<a href="https://www.instagram.com/p/C2dw9bGvoIl/" target="_blank"></a>
+		<div class="thumb">
+			<img src="https://scontent-lax3-2.cdninstagram.com/v/t51.29350-15/420618313_2338698146323228_6053782247907157528_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=18de74&_nc_ohc=YB405hXwRlUAX_wKc84&_nc_ht=scontent-lax3-2.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfAaEsLTycvenbV1TMBFIRkVgkM5n6Xyhm_PnMPyTbtcqw&oe=65BFCC41" >
+		</div>
+	</li>
+	<li class="board_li">
+		<a href="https://www.instagram.com/p/C2ZQyhSLri6/" target="_blank"></a>
+		<div class="thumb">
+			<img src="https://scontent-lax3-2.cdninstagram.com/v/t51.29350-15/420340871_928309501914509_2696973774841660929_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=18de74&_nc_ohc=INdegdNpyvEAX8YVhsI&_nc_ht=scontent-lax3-2.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfAkXt8ThNP2-ps3amThMUJBuw_CpUlCLNBsSX2_naemDg&oe=65BF4A97" >
+		</div>
+	</li>
+	<li class="board_li">
+		<a href="https://www.instagram.com/p/C2MWsNLLOz_/" target="_blank"></a>
+		<div class="thumb">
+			<img src="https://scontent-lax3-1.cdninstagram.com/v/t51.29350-15/419240508_1401464327161405_2517760450566539745_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=18de74&_nc_ohc=pdezFOoFIesAX_SSb26&_nc_ht=scontent-lax3-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfByh1M0sVuoowAfsCgERPB6BRRzOHhxMJRgtc9_DeLiJg&oe=65BE6AA5" >
+		</div>
+	</li>
+	<li class="board_li">
+		<a href="https://www.instagram.com/p/C1nqSicPb-4/" target="_blank"></a>
+		<div class="thumb">
+			<img src="https://scontent-lax3-2.cdninstagram.com/v/t51.29350-15/416000800_572956311705646_3259767424332084242_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=18de74&_nc_ohc=z_hPYyW--3sAX-_kpnX&_nc_ht=scontent-lax3-2.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfDaUVfm8t3GWZuxLBuqoqxwCYtRlx_SA6l2n7BRXLS9Gw&oe=65BFC0C7" >
+		</div>
+	</li>
+	<li class="board_li">
+		<a href="https://www.instagram.com/p/C1Vmo-_PjFv/" target="_blank"></a>
+		<div class="thumb">
+			<img src="https://scontent-lax3-1.cdninstagram.com/v/t51.29350-15/412761967_1344577159524327_6281823304475722307_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=18de74&_nc_ohc=nDocglZ93u8AX_Moo0V&_nc_ht=scontent-lax3-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfCTr4lMVKr8yQcr0OUK14Tz0_080U-oyr8omxz_C2aVkA&oe=65BE99C5" >
+		</div>
+	</li>
+</ul>
+		</div>
+	</div>
+	<div class="main_faq" data-aos="fade-up">
+		<div class="w_custom">
+			<div class="main_tit" data-aos="fade-up">				
+				<h6>FAQ</h6>
+				<a href="/board/board_list?code=faq" class="btn_more">MORE</a>
+			</div>
+<div class="faq_box">
+	<ul class="faq_list">
+		<li class="faq_q">
+			<span>Q</span>
+			<p class="title">What is your minimum order quantity?</p>
+		</li>
+		<li class="faq_a">
+			<div class="answer_box">
+				<span>A</span>
+				<!-- <div>답변</div> -->
+				<div class="yui3-cssreset"><p>We offer a low MOQ of 200 units per color/style for customization orders. For initial orders, we can go as low as 100 units per order. Any units falling below the MOQ will be subject to a surcharge.<br></p></div>
+			</div>
+		</li>
+		<li class="faq_q">
+			<span>Q</span>
+			<p class="title">What should I prepare to proceed with sampling?</p>
+		</li>
+		<li class="faq_a">
+			<div class="answer_box">
+				<span>A</span>
+				<!-- <div>답변</div> -->
+				<div class="yui3-cssreset"><p>To proceed with sampling, you'll need to provide a tech pack, BOM, and artworks for your logo and printed/stripe pattern, if applicable. The artwork files should be in AI format with editable vector graphics. If you are not prepared with these required files, please contact us for further guidance. It's also important to provide fabric type and composition, as they are crucial for the sampling process. If you're uncertain about these details, you can submit a reference sample for us to assess the fabric quality.<br></p></div>
+			</div>
+		</li>
+		<li class="faq_q">
+			<span>Q</span>
+			<p class="title">What is a tech pack and BOM?</p>
+		</li>
+		<li class="faq_a">
+			<div class="answer_box">
+				<span>A</span>
+				<!-- <div>답변</div> -->
+				<div class="yui3-cssreset"><p>A tech pack, or technical package, is a comprehensive blueprint that describes a product's design details. This conveys to a manufacturer how a garment is to be produced. It generally includes flat sketches, colorways, reference images, sewing instructions, labeling and packing information. The Bill of Materials, or BOM is a complete list of raw materials, components, and instructions required to produce a finished product, including quantities needed for manufacturing.<br></p></div>
+			</div>
+		</li>
+		<li class="faq_q">
+			<span>Q</span>
+			<p class="title">I am a novice in the industry. Can you offer some help?</p>
+		</li>
+		<li class="faq_a">
+			<div class="answer_box">
+				<span>A</span>
+				<!-- <div>답변</div> -->
+				<div class="yui3-cssreset"><p>Absolutely! We understand that starting out in the industry can be challenging, but you can count on us to help you navigate the process. We can provide guidance and assistance in building your tech pack and specifications. Please don't hesitate to reach out to us for any questions or support you may need.<br></p></div>
+			</div>
+		</li>
+	</ul>
+</div>
+ 
+<script>
+	$(document).ready(function(){
+		$('.faq_box .faq_list li.faq_q').each(function(){
+			$(this).click(function(){
+				if($(this).hasClass('on')){
+					$('.faq_box .faq_list li.faq_q').removeClass('on');	
+					$('.faq_box .faq_list li.faq_a').stop().slideUp();
+					$(this).removeClass('on').next('.faq_a').stop().slideUp();	
+				}
+				else{
+					$('.faq_box .faq_list li.faq_q').removeClass('on');	
+					$('.faq_box .faq_list li.faq_a').stop().slideUp();
+					$(this).addClass('on').next('.faq_a').stop().slideDown();	
+				}
+				
+			});
+		});
+	});
+</script>
+		</div>
+	</div>	
+	<div class="main_inquiry">
+		<div class="cont w_custom">
+			<div class="write_from" data-aos="fade-right">
+				<div class="main_tit">
+					<h6>Contact Us</h6>
+				</div>
+				<!-- 폼메일 스킨 스타일시트 -->
+				<!-- <script type="text/javascript" src="/lib/js/common_board.js"></script> -->
+<script type="text/javascript" src="/data/skin/respon_default_en/js/common_board.js"></script>
+<script type="text/javascript" src="/lib/smarteditor2-master/workspace/static/js/service/HuskyEZCreator.js" charset="utf-8"></script>
+<script>
+	var Common_Board = new common_board({
+		code : "inquiry",
+		no : "",
+		is_login : ""
+	});
+
+	$(function() {
+		$("form[name='frm']").validate({
+			rules : {
+				title : {required : true},
+mobile : {required : true, onlyNumHyphenValid : true},email : {required : true, email : true},				name : {required : true},
+				password : {required : true, rangelength : [4, 20]},
+				file : {},
+				nonMember : {required : {depends : function(){return true}}},
+				// 추가필드 rules Start
+						ex1_eng : {
+							editorRequired : {
+								depends : function(){
+											if(!$("[name=ex1_eng]").val()){
+												return true;
+											}
+										return false;
+								}
+							}
+						},
+				// 추가필드 rules End
+				captcha: { required: true }
+			}, messages : {
+				title : {required : "Please enter the title."},
+mobile : {required : "Please enter the mobile phone number.", onlyNumHyphenValid : "mobile is only available in numbers and Hyphen."},email : {required : "Please enter your e-mail.", email : "Please enter a valid email."},				name : {required : "Please enter the author of the post."},
+				password : {required : "Please enter a password.", rangelength: $.validator.format("The password is between {0}~{1} characters.")},
+				file : {},
+				nonMember : {required : "Please check the consent for nonmember personal data collection items."},
+				
+				// 추가필드 messages Start
+					ex1_eng : {
+						editorRequired : "Channel is required."
+					},
+			}
+		});
+
+		uploadForm.init(document.frm);
+        $("#captcha_box").html('<img id=\"captcha\" src=\"\/upload\/captcha\/1706707499.3203.jpg\" style=\"width: 180px; height: 40px; border: 0;\" alt=\" \" \/>');
+        $("#refreshCode").on("click", function() {
         });
-    </script>
-    <link rel="stylesheet" type="text/css" href="/data/skin/respon_default_en/css/cssreset-context-min.css"><!-- 에디터 css -->
-    
-    
-    </head>
-    <body data-aos-easing="ease-in-quart" data-aos-duration="800" data-aos-delay="0" cz-shortcut-listen="true">
-    <div class="skip_nav">
-        <a href="#header" class="skip_nav_link">상단메뉴 바로가기</a>
-        <a href="#content" class="skip_nav_link">본문 바로가기</a>
-        <a href="#sub_nav" class="skip_nav_link">본문 하위메뉴 바로가기</a>
-        <a href="#footer" class="skip_nav_link">하단 바로가기</a>
-    </div><!-- 웹접근성용 바로가기 링크 모음 -->
-    <article id="wrap" class="clear main_index">
-    <div id="header" class="hd_move main">
-        <div class="header_cont">
-            <h1 class="hd_logo"><a href="/" title="Logo">GOODTRUST</a></h1>
-            <ul class="hd_lnb">
-                <li class="">
-                    <a href="/company/about">About Us</a>
-                        <ul class="hd_lnb_dep2">
-                            <li class="dep2"><a href="/company/about#1">CEO MESSAGE</a></li>
-                            <li class="dep2"><a href="/company/about#2">CORE VALUE</a></li>
-                            <li class="dep2"><a href="/company/about#3">HISTORY</a></li>
-                            <li class="dep2"><a href="/company/about#4">CUSTOMERS</a></li>
-                            <li class="dep2"><a href="/company/about#5">LOCATION</a></li>
-                        </ul>
-                </li>
-                <li class="">
-                    <a href="/company/oem">Businesses</a>
-                        <ul class="hd_lnb_dep2">
-                            <li class="dep2"><a href="/company/oem#1">OEM</a></li>
-                            <li class="dep2"><a href="/company/oem#2">ODM</a></li>
-                            <li class="dep2"><a href="/company/oem#3">PROCESS</a></li>
-                            <li class="dep2"><a href="/company/oem#4">SUSTAINABILITY</a></li>
-                        </ul>
-                </li>
-                <li class="">
-                    <a href="/company/product">Products</a>
-                        <ul class="hd_lnb_dep2">
-                            <li class="dep2"><a href="/company/product#1">CLOTHING</a></li>
-                            <li class="dep2"><a href="/company/product#2">FABRIC</a></li>
-                            <li class="dep2"><a href="/company/product#3">TRIM</a></li>
-                        </ul>
-                </li>
-                <li class="">
-                    <a href="/board/board_list?code=social">Sustainability</a>
-                        <ul class="hd_lnb_dep2">
-                            <li class="dep2"><a href="/board/board_list?code=social#1">SOCIAL CONTRIBUTION</a></li>
-                        </ul>
-                </li>
-                <li class="">
-                    <a href="/board/board_list?code=research">Development</a>
-                        <ul class="hd_lnb_dep2">
-                            <li class="dep2"><a href="/board/board_list?code=research#1">DEVELOPMENT IDEA</a></li>
-                        </ul>
-                </li>
-                <li class="">
-                    <a href="/board/board_write?code=inquiry">Contact Us</a>
-                        <ul class="hd_lnb_dep2">
-                            <li class="dep2"><a href="/board/board_write?code=inquiry#1">ENQUIRY</a></li>
-                            <li class="dep2"><a href="/board/board_list?code=faq#2">FAQ</a></li>
-                        </ul>
-                </li>
-            </ul>
-            <div class="hd_right">
-                <ul class="hd_gnb dn">
-                    <li><a href="/member/login">LOGIN</a></li> 
-                    <li><a href="/member/join_agreement">JOIN</a></li>
-                    <li class="search"><a href="/goods/goods_search?search=">search</a></li>
-                </ul>	
-                <ul class="hd_lang">
-                    <li>
-                        <a href="#;"><span>ENG</span></a>
-                        <ul>
-                            <li><a href="/?language=kor" onclick="">kor</a></li>
-                            <li><a href="/?language=eng" onclick="">eng</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <a class="menu-trigger" href="#"><span></span><span></span><span></span></a>
-            </div>
-        </div>
-        <div class="right_quick">
-            <ul>
-                <li>
-                    <a href="tel:051-526-4018">Phone</a>
-                    <div class="tel_layer">
-                        <dl>
-                            <dt>Phone</dt>
-                            <dd>
-                                <strong><a href="tel:051-526-4018">+82.51.526.4018</a></strong>
-                                <p>weekdays 09:00 - 18:00</p>
-                            </dd>
-                        </dl>
-                    </div>
-                </li>
-                <li><a href="mailto:sales@goodtrust.co.kr">E-mail</a></li>
-                <li><a href="../board/board_write?code=inquiry">Enquiry</a></li>
-            </ul>
-            <button class="scroll_top" onclick="$('html, body').stop().animate( { scrollTop : '0' }, 800 );">TOP</button>
-        </div>
-    </div>
-    <div class="aside_bg"></div>
-    <aside id="aside">
-        <div class="aside_box">
-            <div class="btn_aside_close"><a class="menu-trigger2 active-1" href="#">Close</a></div>
-            <h1 class="aside_logo"><a href="/">GOODTRUST</a></h1>
-            <ul class="slide menu slidemenu">
-                <li class="depth1_li group_tit"><a href="/company/about" class="depth1_a">About Us</a><span class="icons"></span>
-                    <ul class="depth">
-                        <li class="depth2_li"><a href="/company/about">CEO MESSAGE</a></li><!-- 하위메뉴 없을 때 -->
-                        <li class="depth2_li"><a href="/company/about">CORE VALUE</a></li><!-- 하위메뉴 없을 때 -->
-                        <li class="depth2_li"><a href="/company/about">HISTORY</a></li><!-- 하위메뉴 없을 때 -->
-                        <li class="depth2_li"><a href="/company/about">CUSTOMERS</a></li><!-- 하위메뉴 없을 때 -->
-                        <li class="depth2_li"><a href="/company/about">LOCATION</a></li><!-- 하위메뉴 없을 때 -->
-                    </ul>
-                </li>
-                <li class="depth1_li group_tit"><a href="/company/oem" class="depth1_a">Businesses</a><span class="icons"></span>
-                    <ul class="depth">
-                        <li class="depth2_li"><a href="/company/oem">OEM</a></li><!-- 하위메뉴 없을 때 -->
-                        <li class="depth2_li"><a href="/company/oem">ODM</a></li><!-- 하위메뉴 없을 때 -->
-                        <li class="depth2_li"><a href="/company/oem">PROCESS</a></li><!-- 하위메뉴 없을 때 -->
-                        <li class="depth2_li"><a href="/company/oem">SUSTAINABILITY</a></li><!-- 하위메뉴 없을 때 -->
-                    </ul>
-                </li>
-                <li class="depth1_li group_tit"><a href="/company/product" class="depth1_a">Products</a><span class="icons"></span>
-                    <ul class="depth">
-                        <li class="depth2_li"><a href="/company/product">CLOTHING</a></li><!-- 하위메뉴 없을 때 -->
-                        <li class="depth2_li"><a href="/company/product">FABRIC</a></li><!-- 하위메뉴 없을 때 -->
-                        <li class="depth2_li"><a href="/company/product">TRIM</a></li><!-- 하위메뉴 없을 때 -->
-                    </ul>
-                </li>
-                <li class="depth1_li group_tit"><a href="/board/board_list?code=social" class="depth1_a">Sustainability</a><span class="icons"></span>
-                    <ul class="depth">
-                        <li class="depth2_li"><a href="/board/board_list?code=social">SOCIAL CONTRIBUTION</a></li><!-- 하위메뉴 없을 때 -->
-                    </ul>
-                </li>
-                <li class="depth1_li group_tit"><a href="/board/board_list?code=research" class="depth1_a">Development</a><span class="icons"></span>
-                    <ul class="depth">
-                        <li class="depth2_li"><a href="/board/board_list?code=research">DEVELOPMENT IDEA</a></li><!-- 하위메뉴 없을 때 -->
-                    </ul>
-                </li>
-                <li class="depth1_li group_tit"><a href="/board/board_write?code=inquiry" class="depth1_a">Contact Us</a><span class="icons"></span>
-                    <ul class="depth">
-                        <li class="depth2_li"><a href="/board/board_write?code=inquiry">ENQUIRY</a></li><!-- 하위메뉴 없을 때 -->
-                        <li class="depth2_li"><a href="/board/board_list?code=faq">FAQ</a></li><!-- 하위메뉴 없을 때 -->
-                    </ul>
-                </li>
-            </ul>
-            <ul class="hd_lang">
-                <li><a href="/?language=kor" onclick="">kor</a></li>
-                <li><a href="/?language=eng" onclick="">eng</a></li>
-            </ul>
-        </div>
-    </aside><!-- #aside 상단영역 -->
-    <script>
-    $(function() {
-        //언어선택
-        $("#header .hd_lang li a").on("click", function(){
-            $(this).toggleClass("on").next("ul").stop().slideToggle();
-        });
-        $(document).mouseup(function (e){
-            //select ul 닫기
-            var hd_lang = $('.hd_lang li a');
-            if(hd_lang.has(e.target).length === 0){
-                hd_lang.removeClass("on").next("ul").stop().slideUp();
-            }
-        });
-        //lnb 2depth
-        $('#header .hd_lnb > li').each(function(){
-            
-            $(this).mouseenter(function(){
-                $(this).addClass('slide_on');
-    
-                if ( $(this).hasClass('slide_on') ){
-                $('#header .hd_lnb_dep2').stop().slideUp(300);
-                $(this).children('.hd_lnb_dep2').stop().slideDown(300);
-            } else {
-                $(this).children('.hd_lnb_dep2').stop().slideUp(300);
-            };
-            });
-            $(this).mouseleave(function(){
-                $(this).removeClass('slide_on');
-                $(this).children('.hd_lnb_dep2').stop().slideUp(300);
-            });
-            
-        });	
-        var itval;
-    
-        // aside close
-        function aside_close() {
-            $('#aside').removeClass('on');
-            $('.aside_bg').removeClass('on');
-            clearTimeout(itval);
-            itval = setTimeout(function () {
-                $('.aside_bg').addClass('dn');
-                $('body').css({'overflow':'inherit','height':'auto'});
-            }, 800);
-        }
-        
-        // aside open
-        function aside_open() {
-            $('#aside').addClass('on');
-            $('.aside_bg').removeClass('dn');
-            clearTimeout(itval);
-            $('body').css({'overflow':'hidden','height':'100%'});
-            itval = setTimeout(function () {
-                $('.aside_bg').addClass('on');
-            }, 20);
-        }
-        
-        // aside on/off
-        $('.menu-trigger, .btn_aside_close').each(function(e){
-            $(this).on('click', function(e){
-                e.preventDefault();
-                $('.menu-trigger').toggleClass('active-1');
-                if ($('#aside').hasClass('on')) {
-                    aside_close();
-                } else {
-                    aside_open();
-                }
-            });
-            $('.aside_bg').on('click', function(){
-                $('.menu-trigger').removeClass('active-1');
-                aside_close();
-            });
-        });
-        
-        //카테고리 메뉴
-        $("li.group_tit .icons").on("click", function(e) {
-            //e.preventDefault();
-            $(this).parent().siblings().children().next().next().slideUp(function() {
-                //$(this).parent("li").siblings("li").removeClass("on");
-            });
-            $(this).parent().addClass("on").siblings("li").removeClass("on");
-            $(this).siblings("ul").slideToggle(function() {
-                if($(this).is(":visible") == false) $(this).parent("li").removeClass("on");
-            });
-            if($(this).parent().closest('li').find('ul').children().length == 0) {
-                return true;	
-            } else {
+	});
+
+    function thumbnail_image_choice(value) {
+        var file_fname = $('[name="'+value+'_fname"]').val();
+
+        if ($('[name="'+value+'_image"]').is(":checked") === true) {
+            if (file_fname == "" || typeof file_fname === "undefined")
+            {
+                $('[name="'+value+'_image"]').prop("checked", false);
+                alert("No files selected.");
                 return false;
-            }
-        });
-        
-        // container top padding 
-        var hd_h = $('#wrap #header').outerHeight();
-        $('#wrap #container').css({'padding-top':hd_h});
-    
-        // header animate 
-        $('#wrap #header').addClass('hd_move');
-    
-        // header on
-        $('#header').removeClass('on');
-    
-    
-        var lastScrollTop = 0,
-             delta = 36;
-        $(window).scroll(function(){
-            /*if ( $(this).scrollTop() > 1 ) {
-                $('#header, .right_quick').addClass('on');
             } else {
-                $('#header, .right_quick').removeClass('on');
-            }*/
-            var st = $(this).scrollTop();
-            if (Math.abs(lastScrollTop - st) <= delta) return;
-            if ( (st <= delta) ) {
-                $("#header").removeClass('on');
-            } else {
-                $("#header").addClass('on');
-            };
-            if ( (st > lastScrollTop) && (st > hd_h ) ) {//&& (lastScrollTop > 0)
-                if($('.hd_bnr').hasClass('hide')) {
-                    $(".right_quick").addClass('scrdown');
-                } else {
-                    $(".right_quick").addClass('scrdown');
-                };
-            } else {
-                $(".right_quick").removeClass('scrdown');
-            }
-            lastScrollTop = st;
-            //스크롤 최하단 도착 시
-            var st = $(this).scrollTop();
-            var innerHeight = $(window).innerHeight();
-            var scrollHeight = $('body').prop('scrollHeight');
-            if ((st + innerHeight == scrollHeight)) {
-                $("#header").addClass("end");
-            } else {
-                $("#header").removeClass("end");
-            }
-        });
-        $(window).resize(function() {
-            // 컨텐츠 상단 padding 
-            var hd_h = $('#wrap #header').outerHeight();
-            $('#wrap #container').css({'padding-top':hd_h});
-        });
-    
-        
-        if ( $(window).width() >= 640 ){
-            $('.sub_menu .sub_cate').removeClass('sub_toggle_dep on');
-        } else {
-            $('.sub_menu .sub_cate').addClass('sub_toggle_dep');
-        }
-        $(window).resize( function(){
-            if ( $(window).width() >= 640 ){
-                $('.sub_menu .sub_cate').removeClass('sub_toggle_dep on');
-            } else {
-                $('.sub_menu .sub_cate').addClass('sub_toggle_dep');
-            }
-        });
-        $('.sub_cate_go').each(function(){
-            $(this).click(function(){
-                if($(this).next('.sub_toggle_dep').hasClass('on')) {
-                    $(this).next('.sub_toggle_dep').removeClass('on');
-                } else {
-                    $('.sub_toggle_dep').removeClass('on');
-                    $(this).next('.sub_toggle_dep').addClass('on');
-                }
-            });
-        });
-        /*$(document).click(function(e){
-            if (!$(e.target).is('.navi_step dt') && !$(e.target).is('.navi_step dd') ){
-                $('.navi_step, .navi_step dd').removeClass('on');
-            }
-            if (!$(e.target).is('.sub_cate_go') && !$(e.target).is('.sub_cate') ){
-                $('.sub_cate').removeClass('on');
-            }
-        });*/
-    
-    
-    });
-    </script>
-        <article id="container" class="clear" style="padding-top: 80.75px;">
-            <!-- 측면 시작 #aside -->
-            <!-- 측면 끝 #aside -->
-            <div id="contents_wrap" class="clear">
-                <div id="contents_box">
-                    <!-- #네비게이션 시작 .nav_wrap -->
-                    <!-- #네비게이션 끝 .nav_wrap -->
-    
-                    <!-- 컨텐츠 시작 #contents -->
-                    <div id="content" class="clear ">
-                        <!-- #공통 상단요소 시작 -->
-                        <!-- #공통 상단요소 끝 -->
-                        <!-- #서브 컨텐츠 시작 -->
-    <script>
-    var noShow = function(checkbox){
-        var no = checkbox.value;
-        if(checkbox.checked){
-            Cookie.setCookie("popup_"+no, 'y', 1);
-        }else{
-            Cookie.setCookie("popup_"+no, 'y', -1);
-        }
-    };
-    var winWidth = $(window).width();
-    </script>
-    
-    <style>
-    #contents_wrap {width:100%;padding-left:0 !important;padding-right:0 !important;}
-    #contents_wrap #contents_box {padding:0;}
-    #wrap {padding-top:0;}
-    #header{box-shadow:none;}
-    </style>
-    <!-- 메인 이미지 슬라이드 -->
-    <div class="main_visual" style="height: 1271px;">
-        <ul class="visual_ul slick-initialized slick-slider"><div aria-live="polite" class="slick-list draggable"><div class="slick-track" role="listbox" style="opacity: 1; width: 8210px; transform: translate3d(-3284px, 0px, 0px);"><li class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1" style="width: 1642px; height: 1271px;"><a href="#" tabindex="-1"></a><div class="txt_box"><h3 class="TxtAni">Custom Clothing <br>Manufacturer <br><strong>In South Korea</strong></h3><p class="TxtAni">Experts within clothing industry work together <br>to produce reliable goods that are ‘Made in Korea.’</p></div><div class="thubm" style="background-image:url(/upload/main/imageSlide/eng/responsive/pc/20230109163217_6180.jpg);"></div></li><li class="slick-slide active" data-slick-index="0" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide00" style="width: 1642px; height: 1271px;"><a href="#" tabindex="-1"></a><div class="txt_box"><h3 class="TxtAni">We <strong>Build Trust</strong> <br>In Our Product</h3><p class="TxtAni">Good Trust offers a full-scale manufacturing solution <br>with our comprehensive experience in working with numerous <br>global fashion brands.</p></div><div class="thubm" style="background-image:url(/upload/main/imageSlide/eng/responsive/pc/20230109163214_5420.jpg);"></div></li><li class="slick-slide slick-current slick-active" data-slick-index="1" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide01" style="width: 1642px; height: 1271px;"><a href="#" tabindex="0"></a><div class="txt_box"><h3 class="TxtAni second">Happy Employees, <br>Happy Clients, <br>Happy Partners <br><strong>With Good Trust</strong></h3><p class="TxtAni">Sustainability is important for all. By taking steps to create <br>a more sustainable operation, Good Trust aims to help make the world <br>a better place.</p></div><div class="thubm" style="background-image:url(/upload/main/imageSlide/eng/responsive/pc/20230109163216_4323.jpg);"></div></li><li class="slick-slide" data-slick-index="2" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide02" style="width: 1642px; height: 1271px;"><a href="#" tabindex="-1"></a><div class="txt_box"><h3 class="TxtAni">Custom Clothing <br>Manufacturer <br><strong>In South Korea</strong></h3><p class="TxtAni">Experts within clothing industry work together <br>to produce reliable goods that are ‘Made in Korea.’</p></div><div class="thubm" style="background-image:url(/upload/main/imageSlide/eng/responsive/pc/20230109163217_6180.jpg);"></div></li><li class="slick-slide slick-cloned" data-slick-index="3" aria-hidden="true" tabindex="-1" style="width: 1642px; height: 1271px;"><a href="#" tabindex="-1"></a><div class="txt_box"><h3 class="TxtAni">We <strong>Build Trust</strong> <br>In Our Product</h3><p class="TxtAni">Good Trust offers a full-scale manufacturing solution <br>with our comprehensive experience in working with numerous <br>global fashion brands.</p></div><div class="thubm" style="background-image:url(/upload/main/imageSlide/eng/responsive/pc/20230109163214_5420.jpg);"></div></li></div></div></ul>
-        <button type="button" class="prev slick-arrow" style="">PREV</button>
-        <button type="button" class="next slick-arrow" style="">NEXT</button>
-        <div class="visual_option_wrap">
-            <svg class="progress-svg" width="82" height="82">
-                <g transform="translate(41,41)">
-                    <circle class="circle-bg CirProgress" r="40" cx="0" cy="0"></circle>
-                    <circle class="circle-go CirProgress" r="40" cx="0" cy="0"></circle>
-                </g>
-                <g transform="translate(41,41)">
-                    <circle class="circle-bg2 CirProgress" r="40" cx="0" cy="0"></circle>
-                    <circle class="circle-go2 CirProgress" r="40" cx="0" cy="0"></circle>
-                </g>
-            </svg>
-            <div class="slide_count">0<span class="current">2</span></div>
-        </div>
-    </div>
-    <script type="text/javascript">
-        var confData = JSON.parse('{"form":"responsive","fixed":{"mode":"horizontal","time":"8","speed":"800"},"responsive":{"pc":{"mode":"horizontal","time":"8","speed":"800","width":"1024"},"tablet":{"mode":"horizontal","time":"8","speed":"800","width":"640"},"mobile":{"mode":"horizontal","time":"8","speed":"800"}},"files":{"responsive":{"pc":[{"oname":"20230104120834_3254.jpg","fname":"20230109163214_5420.jpg","link":""},{"oname":"20221220174325_7171.jpg","fname":"20230109163216_4323.jpg","link":""},{"oname":"20221220174328_5712.jpg","fname":"20230109163217_6180.jpg","link":""}],"tablet":[{"oname":"20230104120834_3254.jpg","fname":"20230109163222_6611.jpg","link":""},{"oname":"20221220174325_7171.jpg","fname":"20230109163224_5374.jpg","link":""},{"oname":"20221220174328_5712.jpg","fname":"20230109163226_3729.jpg","link":""}],"mobile":[{"oname":"20230104121059_9751.jpg","fname":"20230109163231_2150.jpg","link":""},{"oname":"20221221115231_1795.jpg","fname":"20230109163233_7924.jpg","link":""},{"oname":"20221221115233_7713.jpg","fname":"20230109163235_8724.jpg","link":""}]},"responsive_length":["","",""]}}');
-            confData.files = confData.files || {};
-        $(window).resize(function() {
-            // 팝업 이벤트 호출
-        });
-        // 메인 비주얼 
-        $(".main_visual").each(function  () {
-            var $slideVisual = $(this).children(".visual_ul");
-            var $slideTxt = $(this).children(".txt_box");
-    
-            $slideVisual.on('init',function (event, slick) {
-                setTimeout(function  () {
-                    $(".slick-slide").eq(0).addClass("active");
-                },500);
-            });
-    
-            $slideVisual.on('afterChange',function  (event, slick, currentSlide) {
-                $(".slick-slide").removeClass("active");
-                $(this).find(".slick-slide").eq(currentSlide).addClass("active");
-            });
-    
-        });
-        $(".main_visual .visual_ul").on('beforeChange', function(event, slick, currentSlide, nextSlide){
-            var target = $(".main_visual .CirProgress");
-            $(".main_visual circle").removeClass("CirProgress");
-            target.outerWidth(),
-            $(".main_visual circle").addClass("CirProgress");
-        });
-    
-    
-        $(document).ready(function($) {
-    
-            var sliderTimer = 8000;
-            var beforeEnd = 500;
-            var $imageSlider = $('.visual_ul');
-    
-                /* 반응형 js */
-                // confData.responsive 가 없을경우 초기화
-                confData.responsive = confData.responsive || {};
-                confData.responsive.pc = confData.responsive.pc || {};
-                confData.responsive.tablet = confData.responsive.tablet || {};
-                confData.responsive.mobile = confData.responsive.mobile || {};
-                confData.files.responsive = confData.files.responsive || {};
-                var currMod = '';
-    
-                function slideResize()
-                {
-                    var width = $(window).width();
-    
-                    var mode = 'mobile';
-                    if(width >= Number(confData.responsive.pc.width)){
-                        mode = 'pc';
-                    } else if(width >= Number(confData.responsive.tablet.width)){
-                        mode = 'tablet';
-                    }
-    
-                    if(currMod !== mode){
-                        if(currMod !== ''){
-                            $('.visual_ul').slick('unslick');
-                        }
-                        currMod = mode;
-                        $('.visual_ul').html(makeLiTag(mode, (confData.files.responsive[mode] || [])));
-                        $('.visual_ul').one('init', function(event, slick) {
-                            $('.total').text(slick.slideCount);
-                        })
-                        .slick({
-                            vertical: (confData.responsive[mode].mode === 'vertical'),
-                            fade: (confData.responsive[mode].mode === 'fade'),
-                            speed: Number(confData.responsive[mode].speed || 1000),
-                            autoplaySpeed: (Number(confData.responsive[mode].time || 3)) * 1000,
-    
-                            // -- 아래에 추가옵션을 입력해주세요
-                            autoplay: true,
-                            dots: false,
-                            autoplaySpeed: 8000,
-                            arrows: true,
-                            prevArrow: $('.main_visual .prev'),
-                            nextArrow: $('.main_visual .next'),
-                            pauseOnHover: false
-                        });
-    
-                    }
-                }
-                
-                slideResize();
-                    $(window).resize(function() {
-                            slideResize();
-                    });
-    
-            // 타이머 시작 
-            function progressBar(){
-                $('.slider-progress').find('.progress').removeAttr('style');
-                $('.slider-progress').find('.progress').removeClass('active');
-                setTimeout(function(){
-                    $('.slider-progress').find('.progress').css('transition-duration', (sliderTimer/1000)+'s').addClass('active');
-                }, 100);
-            }
-            progressBar();
-            $imageSlider.on('beforeChange', function(e, slick) {
-                progressBar();
-            });
-            $imageSlider.on('afterChange', function(e, slick, nextSlide) {
-                titleAnim(nextSlide);
-                $('.current').text(slick.currentSlide + 1);
-            });
-    
-            function titleAnim(ele){
-                setTimeout(function(){
-                }, sliderTimer - beforeEnd);
-            }
-            titleAnim();
-            // 타이머 끝
-    
-        });
-    
-        function makeLiTag(type, file){
-            var path = '/upload/main/imageSlide/eng/' + (['pc', 'tablet', 'mobile'].indexOf(type) > -1? 'responsive/' + type + '/' : 'fixed/');
-            var li = '';
-            var txt = ["<h3 class='TxtAni'>We <strong>Build Trust</strong> <br>In Our Product</h3>","<h3 class='TxtAni second'>Happy Employees, <br>Happy Clients, <br>Happy Partners <br><strong>With Good Trust</strong></h3>","<h3 class='TxtAni'>Custom Clothing <br>Manufacturer <br><strong>In South Korea</strong></h3>"];
-            var txt2 = ["<p class='TxtAni'>Good Trust offers a full-scale manufacturing solution <br>with our comprehensive experience in working with numerous <br>global fashion brands.</p>","<p class='TxtAni'>Sustainability is important for all. By taking steps to create <br>a more sustainable operation, Good Trust aims to help make the world <br>a better place.</p>","<p class='TxtAni'>Experts within clothing industry work together <br>to produce reliable goods that are ‘Made in Korea.’</p>"];
-            for(var i=0; i<file.length; i++) {
-                var lnk = file[i].link ? file[i].link : "#";
-                li += '<li>';
-                li += '<a href="' + lnk + '"></a>';
-                li += '<div class="txt_box">'+ txt[i] + txt2[i];
-                li += '</div>';
-                li += '<div class="thubm" style="background-image:url(' + path + file[i].fname + ');"></a>';
-                li += '</li>';
-            }
-            return li;
-        }
-    
-    </script>
-    <!-- //메인 이미지 슬라이드 -->
-    <div class="main_content">
-        <div class="main_intro w_custom aos-init aos-animate" data-aos="">
-            <div class="logo_box aos-init aos-animate" data-aos="fade-right">
-                <img src="/data/skin/respon_default_en/images/skin/main_intro_logo.png" alt="">
-            </div>
-            <div class="main_tit aos-init aos-animate" data-aos="fade-left">
-                <h3>Want to start a clothing brand? <br>We can help!</h3>
-                <p>Good Trust is one of Korea’s leading clothing manufacturers, producing garments for various global brands. <br>We manufacture and deliver fully custom clothing of the highest quality to your brand.</p>
-                <div class="btn_box">
-                    <a href="/company/about" class="btn_common blue">View More</a>
-                    <a href="/upload/Catalog_20230113.pdf" target="_blank" class="btn_common">Catalog</a>
-                </div>
-            </div>
-        </div>
-        <div class="main_cate_bnr aos-init" data-aos="fade-up">
-            <ul class="bnr_list" style="background: url(&quot;/data/skin/respon_default_en/images/skin/main_cate_bnr_bg2.jpg&quot;) center center no-repeat;">
-                <li>
-                    <a href="./company/about" class="link"></a>
-                    <span>BUSINESS</span>
-                    <ul class="cate_list">
-                        <li><a href="./company/oem#1" class="btn_common">OEM</a></li>
-                        <li><a href="./company/oem#2" class="btn_common">ODM</a></li>
-                        <li><a href="./company/oem#3" class="btn_common">PROCESS</a></li>
-                        <li><a href="./company/oem#4" class="btn_common">SUSTAINABILITY</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="./company/product" class="link"></a>
-                    <span>PRODUCT</span>
-                    <ul class="cate_list">
-                        <li><a href="./company/product#1" class="btn_common">CLOTHING</a></li>
-                        <li><a href="./company/product#2" class="btn_common">FABRIC</a></li>
-                        <li><a href="./company/product#3" class="btn_common">TRIMS</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="./board/board_list?code=social" class="link"></a>
-                    <span>SOCIAL <br>CONTRIBUTION</span>
-                    <ul class="cate_list">
-                        <li><a href="./board/board_list?code=social" class="btn_common">VIEW MORE</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <div class="main_service">
-            <div class="cont w_custom">
-                <div class="main_tit aos-init" data-aos="fade-right">
-                    <h4>MADE IN KOREA </h4>
-                    <p>Good Trust delivers the best quality product and customer satisfaction.</p>
-                </div>
-                <ul class="service_list aos-init" data-aos="fade-left">
-                    <li>
-                        <span><img src="/data/skin/respon_default_en/images/skin/main_service_list_icon01.png" alt=""></span>
-                        <dl>
-                            <dt>Low Minimum Order Quantity</dt>
-                            <dd>We offer a low MOQ of 200 units for customization orders. For initial orders, we can go as low as 100 units per order. Any units falling below the MOQ will be subject to a surcharge</dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <span><img src="/data/skin/respon_default_en/images/skin/main_service_list_icon02.png" alt=""></span>
-                        <dl>
-                            <dt>Duty Free <br>with FTA</dt>
-                            <dd>By Korea-U.S. FTA, you can take advantage of duty-free U.S. import benefit on ‘Made in Korea’ clothing. </dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <span><img src="/data/skin/respon_default_en/images/skin/main_service_list_icon03.png" alt=""></span>
-                        <dl>
-                            <dt>Strict <br>Quality Control</dt>
-                            <dd>Good Trust has established <br>strict quality control system <br>and produced garments of <br>the highest quality.</dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <span><img src="/data/skin/respon_default_en/images/skin/main_service_list_icon04.png" alt=""></span>
-                        <dl>
-                            <dt>On-time Delivery</dt>
-                            <dd>Good Trust ensures the timely delivery of seasonal and high-volume products for your barnd to keep up with shifting trends and demand.</dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <span><img src="/data/skin/respon_default_en/images/skin/main_service_list_icon05.png" alt=""></span>
-                        <dl>
-                            <dt>Reasonable Price</dt>
-                            <dd>Good Trust is committed to providing garments which meet the expectations of our clients at competitive prices.</dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <span><img src="/data/skin/respon_default_en/images/skin/main_service_list_icon06.png" alt=""></span>
-                        <dl>
-                            <dt>Excellent <br>Client Service</dt>
-                            <dd>Our excellent customer service will go beyond meeting your needs and provide support in a timely and pleasant manner. </dd>
-                        </dl>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="main_gallery">
-            <div class="w_custom">
-                <div class="main_tit aos-init" data-aos="fade-up">				
-                    <h5>goodtrust_official</h5>
-                    <a href="https://www.instagram.com/goodtrust_official/" class="btn_common" target="_blank">follow us</a>
-                </div>
-    <ul class="board_ul aos-init" data-aos="fade-up">
-        <li class="board_li">
-            <a href="https://www.instagram.com/p/C2dw9bGvoIl/" target="_blank"></a>
-            <div class="thumb">
-                <img src="https://scontent-lax3-2.cdninstagram.com/v/t51.29350-15/420618313_2338698146323228_6053782247907157528_n.jpg?_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=18de74&amp;_nc_ohc=YB405hXwRlUAX_wKc84&amp;_nc_ht=scontent-lax3-2.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfAaEsLTycvenbV1TMBFIRkVgkM5n6Xyhm_PnMPyTbtcqw&amp;oe=65BFCC41">
-            </div>
-        </li>
-        <li class="board_li">
-            <a href="https://www.instagram.com/p/C2ZQyhSLri6/" target="_blank"></a>
-            <div class="thumb">
-                <img src="https://scontent-lax3-2.cdninstagram.com/v/t51.29350-15/420340871_928309501914509_2696973774841660929_n.jpg?_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=18de74&amp;_nc_ohc=INdegdNpyvEAX8YVhsI&amp;_nc_ht=scontent-lax3-2.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfAkXt8ThNP2-ps3amThMUJBuw_CpUlCLNBsSX2_naemDg&amp;oe=65BF4A97">
-            </div>
-        </li>
-        <li class="board_li">
-            <a href="https://www.instagram.com/p/C2MWsNLLOz_/" target="_blank"></a>
-            <div class="thumb">
-                <img src="https://scontent-lax3-1.cdninstagram.com/v/t51.29350-15/419240508_1401464327161405_2517760450566539745_n.jpg?_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=18de74&amp;_nc_ohc=pdezFOoFIesAX_SSb26&amp;_nc_ht=scontent-lax3-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfByh1M0sVuoowAfsCgERPB6BRRzOHhxMJRgtc9_DeLiJg&amp;oe=65BE6AA5">
-            </div>
-        </li>
-        <li class="board_li">
-            <a href="https://www.instagram.com/p/C1nqSicPb-4/" target="_blank"></a>
-            <div class="thumb">
-                <img src="https://scontent-lax3-2.cdninstagram.com/v/t51.29350-15/416000800_572956311705646_3259767424332084242_n.jpg?_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=18de74&amp;_nc_ohc=z_hPYyW--3sAX-_kpnX&amp;_nc_ht=scontent-lax3-2.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfDaUVfm8t3GWZuxLBuqoqxwCYtRlx_SA6l2n7BRXLS9Gw&amp;oe=65BFC0C7">
-            </div>
-        </li>
-        <li class="board_li">
-            <a href="https://www.instagram.com/p/C1Vmo-_PjFv/" target="_blank"></a>
-            <div class="thumb">
-                <img src="https://scontent-lax3-1.cdninstagram.com/v/t51.29350-15/412761967_1344577159524327_6281823304475722307_n.jpg?_nc_cat=110&amp;ccb=1-7&amp;_nc_sid=18de74&amp;_nc_ohc=nDocglZ93u8AX_Moo0V&amp;_nc_ht=scontent-lax3-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCTr4lMVKr8yQcr0OUK14Tz0_080U-oyr8omxz_C2aVkA&amp;oe=65BE99C5">
-            </div>
-        </li>
-    </ul>
-            </div>
-        </div>
-        <div class="main_faq aos-init" data-aos="fade-up">
-            <div class="w_custom">
-                <div class="main_tit aos-init" data-aos="fade-up">				
-                    <h6>FAQ</h6>
-                    <a href="/board/board_list?code=faq" class="btn_more">MORE</a>
-                </div>
-    <div class="faq_box">
-        <ul class="faq_list">
-            <li class="faq_q">
-                <span>Q</span>
-                <p class="title">What is your minimum order quantity?</p>
-            </li>
-            <li class="faq_a">
-                <div class="answer_box">
-                    <span>A</span>
-                    <!-- <div>답변</div> -->
-                    <div class="yui3-cssreset"><p>We offer a low MOQ of 200 units per color/style for customization orders. For initial orders, we can go as low as 100 units per order. Any units falling below the MOQ will be subject to a surcharge.<br></p></div>
-                </div>
-            </li>
-            <li class="faq_q">
-                <span>Q</span>
-                <p class="title">What should I prepare to proceed with sampling?</p>
-            </li>
-            <li class="faq_a">
-                <div class="answer_box">
-                    <span>A</span>
-                    <!-- <div>답변</div> -->
-                    <div class="yui3-cssreset"><p>To proceed with sampling, you'll need to provide a tech pack, BOM, and artworks for your logo and printed/stripe pattern, if applicable. The artwork files should be in AI format with editable vector graphics. If you are not prepared with these required files, please contact us for further guidance. It's also important to provide fabric type and composition, as they are crucial for the sampling process. If you're uncertain about these details, you can submit a reference sample for us to assess the fabric quality.<br></p></div>
-                </div>
-            </li>
-            <li class="faq_q">
-                <span>Q</span>
-                <p class="title">What is a tech pack and BOM?</p>
-            </li>
-            <li class="faq_a">
-                <div class="answer_box">
-                    <span>A</span>
-                    <!-- <div>답변</div> -->
-                    <div class="yui3-cssreset"><p>A tech pack, or technical package, is a comprehensive blueprint that describes a product's design details. This conveys to a manufacturer how a garment is to be produced. It generally includes flat sketches, colorways, reference images, sewing instructions, labeling and packing information. The Bill of Materials, or BOM is a complete list of raw materials, components, and instructions required to produce a finished product, including quantities needed for manufacturing.<br></p></div>
-                </div>
-            </li>
-            <li class="faq_q">
-                <span>Q</span>
-                <p class="title">I am a novice in the industry. Can you offer some help?</p>
-            </li>
-            <li class="faq_a">
-                <div class="answer_box">
-                    <span>A</span>
-                    <!-- <div>답변</div> -->
-                    <div class="yui3-cssreset"><p>Absolutely! We understand that starting out in the industry can be challenging, but you can count on us to help you navigate the process. We can provide guidance and assistance in building your tech pack and specifications. Please don't hesitate to reach out to us for any questions or support you may need.<br></p></div>
-                </div>
-            </li>
-        </ul>
-    </div>
-     
-    <script>
-        $(document).ready(function(){
-            $('.faq_box .faq_list li.faq_q').each(function(){
-                $(this).click(function(){
-                    if($(this).hasClass('on')){
-                        $('.faq_box .faq_list li.faq_q').removeClass('on');	
-                        $('.faq_box .faq_list li.faq_a').stop().slideUp();
-                        $(this).removeClass('on').next('.faq_a').stop().slideUp();	
-                    }
-                    else{
-                        $('.faq_box .faq_list li.faq_q').removeClass('on');	
-                        $('.faq_box .faq_list li.faq_a').stop().slideUp();
-                        $(this).addClass('on').next('.faq_a').stop().slideDown();	
-                    }
-                    
-                });
-            });
-        });
-    </script>
-            </div>
-        </div>	
-        <div class="main_inquiry">
-            <div class="cont w_custom">
-                <div class="write_from aos-init" data-aos="fade-right">
-                    <div class="main_tit">
-                        <h6>Contact Us</h6>
-                    </div>
-                    <!-- 폼메일 스킨 스타일시트 -->
-                    <!-- <script type="text/javascript" src="/lib/js/common_board.js"></script> -->
-    <script type="text/javascript" src="/data/skin/respon_default_en/js/common_board.js"></script>
-    <script type="text/javascript" src="/lib/smarteditor2-master/workspace/static/js/service/HuskyEZCreator.js" charset="utf-8"></script>
-    <script>
-        var Common_Board = new common_board({
-            code : "inquiry",
-            no : "",
-            is_login : ""
-        });
-    
-        $(function() {
-            $("form[name='frm']").validate({
-                rules : {
-                    title : {required : true},
-    mobile : {required : true, onlyNumHyphenValid : true},email : {required : true, email : true},				name : {required : true},
-                    password : {required : true, rangelength : [4, 20]},
-                    file : {},
-                    nonMember : {required : {depends : function(){return true}}},
-                    // 추가필드 rules Start
-                            ex1_eng : {
-                                editorRequired : {
-                                    depends : function(){
-                                                if(!$("[name=ex1_eng]").val()){
-                                                    return true;
-                                                }
-                                            return false;
-                                    }
-                                }
-                            },
-                    // 추가필드 rules End
-                    captcha: { required: true }
-                }, messages : {
-                    title : {required : "Please enter the title."},
-    mobile : {required : "Please enter the mobile phone number.", onlyNumHyphenValid : "mobile is only available in numbers and Hyphen."},email : {required : "Please enter your e-mail.", email : "Please enter a valid email."},				name : {required : "Please enter the author of the post."},
-                    password : {required : "Please enter a password.", rangelength: $.validator.format("The password is between {0}~{1} characters.")},
-                    file : {},
-                    nonMember : {required : "Please check the consent for nonmember personal data collection items."},
-                    
-                    // 추가필드 messages Start
-                        ex1_eng : {
-                            editorRequired : "Channel is required."
-                        },
-                }
-            });
-    
-            uploadForm.init(document.frm);
-            $("#captcha_box").html('<img id=\"captcha\" src=\"\/upload\/captcha\/1706707499.3203.jpg\" style=\"width: 180px; height: 40px; border: 0;\" alt=\" \" \/>');
-            // $.ajax({
-            //     url : "https://www.goodtrust.co.kr/captchaRequest/get", 
-            //     datatype : "json",
-            //     type : "POST",
-            //     data : {"page" : "write"},
-            //     success : function(response, status, request){
-            //         if(status == "success") {
-            //             if(request.readyState == "4" && request.status == "200") {
-            //                 var result = JSON.parse(response);
-            //                 if(result.code) {
-            //                     $("#captcha_box").html('<img id=\"captcha\" src=\"\/upload\/captcha\/1706707499.3203.jpg\" style=\"width: 180px; height: 40px; border: 0;\" alt=\" \" \/>');
-            //                 } else {
-            //                     alert(result.error);
-            //                 }
-            //             }
-            //         }
-            //     }, error : function(request, status, error){
-            //         alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-            //     }
-            // });
-            $("#refreshCode").on("click", function() {
-                // $.ajax({
-                //     url : "/captchaRequest/get", 
-                //     datatype : "json",
-                //     type : "POST",
-                //     data : {"page" : "write"},
-                //     success : function(response, status, request){
-                //         if(status == "success") {
-                //             if(request.readyState == "4" && request.status == "200") {
-                //                 var result = JSON.parse(response);
-                //                 if(result.code) {
-                //                     $("#captcha_box").html(result.captcha.image);
-                //                 } else {
-                //                     alert(result.error);
-                //                 }
-                //             }
-                //         }
-                //     }, error : function(request, status, error){
-                //         alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-                //     }
-                // });
-            });
-        });
-    
-        function thumbnail_image_choice(value) {
-            var file_fname = $('[name="'+value+'_fname"]').val();
-    
-            if ($('[name="'+value+'_image"]').is(":checked") === true) {
-                if (file_fname == "" || typeof file_fname === "undefined")
-                {
+                if ($(".thumbnail_image:checked").length > 1) {
                     $('[name="'+value+'_image"]').prop("checked", false);
-                    alert("No files selected.");
-                    return false;
-                } else {
-                    if ($(".thumbnail_image:checked").length > 1) {
-                        $('[name="'+value+'_image"]').prop("checked", false);
-                    }else {
-                        $('[name="'+value+'_image"]').prop("checked", true);
-                        $('[name="'+value+'_image"]').val(file_fname);
-                    }
+                }else {
+                    $('[name="'+value+'_image"]').prop("checked", true);
+                    $('[name="'+value+'_image"]').val(file_fname);
                 }
             }
         }
-    </script>
-        <form name="frm" id="frm" action="/board/board_write" target="ifr_processor" method="POST" novalidate="novalidate">
-            <fieldset>
-                <legend>게시글 작성</legend>
-                <input type="hidden" name="write_userid" value="">
-                <input type="hidden" name="code" value="inquiry">
-                <input type="hidden" name="mode" value="write">
-                <input type="hidden" name="no" value="">
-                <input type="hidden" name="cref" value="">
-                <input type="hidden" name="upload_path" value="">
-                <!-- 메인에서 게시글 작성시 사용하는 폼 -->
-                <table class="board_main_write" summary="Compose Post, Title, Author, Details, File Attachments, etc.">
-                    <caption>Compose Post</caption>
-                    <colgroup>
-                        <col width="135px">
-                        <col>
-                    </colgroup>
-                    <tbody>
-                        <tr>
-                            <th>Subject</th>
-                            <td>
-                                <input type="text" name="title" id="title" placeholder="Enter a subject" value=""><label for="title" class="dn">Title</label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Name</th>
-                            <td>
-                                <input type="text" name="name" id="name" placeholder="Enter your name" value=""><label for="name" class="dn">Author</label>
-                            </td>
-                        </tr>
-                        
-                        <tr class="dn">	
-                            <th>Password</th>
-                            <!-- 글작성, 글답변작성 시 비회원유저 -->
-                                <td>
-                                    <input type="hidden" name="password" placeholder="please write password" id="password" value="1706705224"><label for="password" class="dn">password</label>
-                                </td>
-                        </tr>
-                        <tr>
-                            <th>E-mail</th>
-                            <td>
-                                <input type="text" name="email" placeholder="Enter a valid e-mail address" class="input" value="" required="" aria-required="true">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Contact</th>
-                            <td>
-                                <input type="text" name="mobile" placeholder="ex) +82-10-1234-5678" class="input" value="">
-                            </td>
-                        </tr>
-                        <!--추가 필드-->
-                                <tr class=" ">
-                                    <th scope="row">Channel</th>
-                                    <td>
-                                            <select name="ex1_eng">
-                                                    <option value="How did you hear about us?">
-                                                        How did you hear about us?
-                                                    </option>
-                                                    <option value="Search Engine">
-                                                        Search Engine
-                                                    </option>
-                                                    <option value="Social Media(Instagram, LinkedIn)">
-                                                        Social Media(Instagram, LinkedIn)
-                                                    </option>
-                                                    <option value="Referral">
-                                                        Referral
-                                                    </option>
-                                                    <option value="Online/Offline Advertisement">
-                                                        Online/Offline Advertisement
-                                                    </option>
-                                                    <option value="Newspaper/Online Newspaper">
-                                                        Newspaper/Online Newspaper
-                                                    </option>
-                                                    <option value="Other">
-                                                        Other
-                                                    </option>
-                                            </select> 
-                                    </td>
-                                </tr>
-                        <tr>
-                            <th class="ver_top">Message</th>
-                            <td>
-                                <div class="edit-box" style="width:100%;"><textarea name="content" id="contents" placeholder="Enter your message" style="height:122px;" title="내용을 입력하세요."></textarea></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="ver_top">Type the numbers</th>
-                            <td>
-                                <span id="captcha_box"><img id="captcha" src="/upload/captcha/1706707499.3203.jpg" style="width: 180px; height: 40px; border: 0;" alt=" "></span>
-                                <input type="text" name="captcha" id="captcha" class="input">
-                                <label for="captcha" class="dn">자동가입방지 문자입력</label>
-                                <span class="btn_sm btn_reset" id="refreshCode"> refresh</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" class="check_td">
-                                <strong>Data Use Agreement</strong>
-                                <input type="hidden" name="is_secret" value="n">
-                                <!-- 개인정보 수집항목 동의 -->
-                                <div class="policy_cont dis_inblock ml_20">
-                                    <div>
-                                        <input type="checkbox" name="nonMember" id="checkbox-nonMember">
-                                        <label for="checkbox-nonMember">By checking this box, I consent to the given information being used by Good Trust to contact me about business enquiry.</label>
-                                        <!-- <a href="/service/usepolicy" target="_blank">View</a> -->
-                                    </div>
-                                </div><!-- .policy_cont -->
-                            </td>
-                        </tr>
-                    </tbody>
-                </table><!--board_write-->
-                <button id="btnSend" onclick="Common_Board.board_write(this.form); return false;" class="btn_send"><a href="javascript://" class="btn_send_main">SEND</a></button>
-            </fieldset>
-        </form>
-        <script>
-            $(document).ready(function(){
-                $('table.bbs_write td select[name="ex1_eng"] option[value="How did you hear about us?"]').prop('disabled', true);
-            });
-        </script>
-                    <!-- 폼메일 스킨 스타일시트 -->
-                </div>
-                <div class="location aos-init" data-aos="fade-left">
-                    <div class="main_tit">
-                        <h6>Location</h6>
-                    </div>
-                    <div class="map_wrap">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3263.389987077498!2d129.04223391554027!3d35.12194026804795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3568ebdb663af6db%3A0x89b1da3a916899b!2s7%20Jungang-daero%20286beon-gil%2C%20Dong-gu%2C%20Busan!5e0!3m2!1sen!2skr!4v1673853048597!5m2!1sen!2skr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        <ul class="info_list">
-                            <li>
-                                <dl>
-                                    <dt class="addr">Adress.</dt>
-                                    <dd>10F GT Bldg, 7, Jungang-daero 286beon-gil, Dong-gu, Busan, Republic of Korea (48730)</dd>
-                                </dl>
-                            </li>
-                            <li>
-                                <dl>
-                                    <dt class="mail">E-mail.</dt>
-                                    <dd><a href="mailto:sales@goodtrust.co.kr">sales@goodtrust.co.kr</a></dd>
-                                </dl>
-                            </li>
-                            <li>
-                                <dl>
-                                    <dt class="tel">Tel.</dt>
-                                    <dd><a href="tel:051-526-4018">051-526-4018, 4019</a></dd>
-                                </dl>
-                            </li>
-                            <li>
-                                <dl>
-                                    <dt class="fax">Fax.</dt>
-                                    <dd>051-526-4028</dd>
-                                </dl>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="btm_bnr">
-            <div class="thumb"></div>
-        </div>
-    </div>
-    <!-- ** layout정리190513  ** -->
-                        <!-- #서브 컨텐츠 끝 -->
-    
-                    </div><!-- .contents -->
-                    <!-- 컨텐츠 끝 .contents -->
-    
-                </div><!-- .contents_box -->
-    
-            </div><!-- .contents_wrap -->
-        <!-- .warpper -->
-    <!-- ** layout정리190513  ** -->
-    
-        <footer id="footer">
-            <div class="ftr_inr">
-                <div class="cont">
-                    <div class="ftr_info">
-                        <h2 class="logo"><img src="/data/skin/respon_default_en/images/skin/ftr_logo.png" alt=""></h2>
-                        <p>CEO : Younggun Park <br>10F GT Bldg, 7, Jungang-daero 286beon-gil, Dong-gu, Busan, Republic of Korea (48730) <br>E-Mail. <a href="mailto:sales@goodtrust.co.kr">sales@goodtrust.co.kr</a> <br>Tel. <a href="tel:051-526-4018">051-526-4018, 4019</a> <br>Fax. 051-526-4028</p>
-                    </div>
-                    <ul class="ftr_nav">
-                        <li class="">
-                            <a href="/company/about">About Us</a>
-                                <ul class="hd_lnb_dep2">
-                                    <li class="dep2"><a href="/company/about">CEO MESSAGE</a></li>
-                                    <li class="dep2"><a href="/company/about">CORE VALUE</a></li>
-                                    <li class="dep2"><a href="/company/about">HISTORY</a></li>
-                                    <li class="dep2"><a href="/company/about">CUSTOMERS</a></li>
-                                    <li class="dep2"><a href="/company/about">LOCATION</a></li>
-                                </ul>
-                        </li>
-                        <li class="">
-                            <a href="/company/oem">Businesses</a>
-                                <ul class="hd_lnb_dep2">
-                                    <li class="dep2"><a href="/company/oem">OEM</a></li>
-                                    <li class="dep2"><a href="/company/oem">ODM</a></li>
-                                    <li class="dep2"><a href="/company/oem">PROCESS</a></li>
-                                    <li class="dep2"><a href="/company/oem">SUSTAINABILITY</a></li>
-                                </ul>
-                        </li>
-                        <li class="">
-                            <a href="/company/product">Products</a>
-                                <ul class="hd_lnb_dep2">
-                                    <li class="dep2"><a href="/company/product">CLOTHING</a></li>
-                                    <li class="dep2"><a href="/company/product">FABRIC</a></li>
-                                    <li class="dep2"><a href="/company/product">TRIM</a></li>
-                                </ul>
-                        </li>
-                        <li class="">
-                            <a href="/board/board_list?code=social">Sustainability</a>
-                                <ul class="hd_lnb_dep2">
-                                    <li class="dep2"><a href="/board/board_list?code=social">SOCIAL CONTRIBUTION</a></li>
-                                </ul>
-                        </li>
-                        <li class="">
-                            <a href="/board/board_list?code=research">Development</a>
-                                <ul class="hd_lnb_dep2">
-                                    <li class="dep2"><a href="/board/board_list?code=research">DEVELOPMENT IDEA</a></li>
-                                </ul>
-                        </li>
-                        <li class="">
-                            <a href="/board/board_write?code=inquiry">Contact Us</a>
-                                <ul class="hd_lnb_dep2">
-                                    <li class="dep2"><a href="/board/board_write?code=inquiry">ENQUIRY</a></li>
-                                    <li class="dep2"><a href="/board/board_list?code=faq">FAQ</a></li>
-                                </ul>
-                        </li>
-                    </ul>
-                </div>
-                <div class="copyright">
-                    <p>ⓒ2023 GOODTRUST  CORPORATION ALL rights reserved. <a href="http://www.designart.co.kr/new/index.php" target="_blank">designed by DESIGNART</a></p>
-                    <ul class="sns_list">
-                        <li><a href="//www.instagram.com/goodtrust_official/" target="_blank"><img src="/data/skin/respon_default_en/images/skin/ftr_sns_icon01.png" alt=""></a></li>
-                        <li><a href="//www.linkedin.com/company/good-trust-co--ltd-/" target="_blank"><img src="/data/skin/respon_default_en/images/skin/ftr_sns_icon02.png" alt=""></a></li>
-                    </ul>
-                </div>
-            </div>
-        </footer><!-- #footer 하단영역 -->
-        <div id="popup_contents">
-    <script>
-    var noShow = function(checkbox){
-        var no = checkbox.value;
-        if(checkbox.checked){
-            Cookie.setCookie("popup_"+no, 'y', 1);
-        }else{
-            Cookie.setCookie("popup_"+no, 'y', -1);
-        }
-    };
-    var winWidth = $(window).width();
-    </script>
-        </div>
-    </article><!-- #wrap 전체영역 -->
-    <script>
-    $(document).ready(function(){
-        //애니메이션
-            AOS.init({
-                offset: 0,
-                debounceDelay: 50,
-                duration: 800,
-                throttleDelay: 99,
-                easing: 'ease-in-quart',
-            });	
-            onElementHeightChange(document.body, function(){
-                AOS.refresh();
-            });
-            function onElementHeightChange(elm, callback) {
-                var lastHeight = elm.clientHeight
-                var newHeight;
-    
-                (function run() {
-                    newHeight = elm.clientHeight;      
-                    if (lastHeight !== newHeight) callback();
-                    lastHeight = newHeight;
-                    if (elm.onElementHeightChangeTimer) {
-                        clearTimeout(elm.onElementHeightChangeTimer); 
-                    }
-                    elm.onElementHeightChangeTimer = setTimeout(run, 200);
-                })();
-            }
-    });
-    $(window).on('load', function () {
-        //애니메이션
-            AOS.refresh(true);
-    });
-    </script>
-    <iframe name="ifr_processor" id="ifr_processor" title="&nbsp;" width="0" height="0" frameborder="0" style="display:none;"></iframe>
-    
-    
-    
-    <script type="text/javascript">
-    $(document).ready(function(){
-        // visual pause btn 
-            $('#pause-btn').on('click',function() {
-                $('.main_visual .visual_ul').slick('slickPause');
-            });
-    
-        // header on
-            $('#header').addClass('main');
-            $('#header').removeClass('on');
-            $(window).scroll(function(){
-                if ( $(this).scrollTop() > 1 ) {
-                    $('#header').addClass('on');
-                } else {
-                    $('#header').removeClass('on');
-                }
-            });	
-        //카테고리 배너 BG
-            $(".main_cate_bnr .bnr_list > li:nth-child(1)").mouseenter(function(){
-                $(".main_cate_bnr .bnr_list").css("background","url('/data/skin/respon_default_en/images/skin/main_cate_bnr_bg.jpg') no-repeat center");
-            });
-            $(".main_cate_bnr .bnr_list > li:nth-child(2)").mouseenter(function(){
-                $(".main_cate_bnr .bnr_list").css("background","url('/data/skin/respon_default_en/images/skin/main_cate_bnr_bg2.jpg') no-repeat center");
-            });
-            $(".main_cate_bnr .bnr_list > li:nth-child(3)").mouseenter(function(){
-                $(".main_cate_bnr .bnr_list").css("background","url('/data/skin/respon_default_en/images/skin/main_cate_bnr_bg3.jpg') no-repeat center");
-            });
-        winH = $(window).height(),
-        winW = $(window).width();
-        $('.main_visual').height(winH);
-        $('.main_visual .slick-slide').height(winH);
-    
-    
-        $(window).resize(function(){
-            winH = $(window).height(),
-            winW = $(window).width();
-            // visual height 
-                $('.main_visual').height(winH);
-                $('.main_visual .slick-slide').height(winH);
-        });
-    
-    });
-    
-    </script></article></body></html>
+    }
+</script>
+	<form name="frm" id="frm" action="/board/board_write" target="ifr_processor" method="POST">
+		<fieldset>
+			<legend>게시글 작성</legend>
+			<input type="hidden" name="write_userid" value="" />
+			<input type="hidden" name="code" value="inquiry" />
+			<input type="hidden" name="mode" value="write" />
+			<input type="hidden" name="no" value="" />
+			<input type="hidden" name="cref" value="" />
+			<input type="hidden" name="upload_path" value="" />
+			<!-- 메인에서 게시글 작성시 사용하는 폼 -->
+			<table class="board_main_write" summary="Compose Post, Title, Author, Details, File Attachments, etc.">
+				<caption>Compose Post</caption>
+				<colgroup>
+					<col width="135px">
+					<col >
+				</colgroup>
+				<tbody>
+					<tr>
+						<th>Subject</th>
+						<td>
+							<input type="text" name="title" id="title" placeholder="Enter a subject" value="" /><label for="title" class="dn">Title</label>
+						</td>
+					</tr>
+					<tr>
+						<th>Name</th>
+						<td>
+							<input type="text" name="name" id="name" placeholder="Enter your name" value="" /><label for="name" class="dn">Author</label>
+						</td>
+					</tr>
+					
+					<tr class="dn">	
+						<th>Password</th>
+						<!-- 글작성, 글답변작성 시 비회원유저 -->
+							<td>
+								<input type="hidden" name="password" placeholder="please write password" id="password" value="1706711295"/><label for="password" class="dn">password</label>
+							</td>
+					</tr>
+					<tr>
+						<th>E-mail</th>
+						<td>
+							<input type="text" name="email" placeholder="Enter a valid e-mail address" class="input" value="" required />
+						</td>
+					</tr>
+					<tr>
+						<th>Contact</th>
+						<td>
+							<input type="text" name="mobile" placeholder="ex) +82-10-1234-5678"class="input" value="" />
+						</td>
+					</tr>
+					<!--추가 필드-->
+							<tr class=" ">
+								<th scope="row">Channel</th>
+								<td>
+										<select name="ex1_eng">
+												<option value="How did you hear about us?"
+												>
+													How did you hear about us?
+												</option>
+												<option value="Search Engine"
+												>
+													Search Engine
+												</option>
+												<option value="Social Media(Instagram, LinkedIn)"
+												>
+													Social Media(Instagram, LinkedIn)
+												</option>
+												<option value="Referral"
+												>
+													Referral
+												</option>
+												<option value="Online/Offline Advertisement"
+												>
+													Online/Offline Advertisement
+												</option>
+												<option value="Newspaper/Online Newspaper"
+												>
+													Newspaper/Online Newspaper
+												</option>
+												<option value="Other"
+												>
+													Other
+												</option>
+										</select> 
+								</td>
+							</tr>
+					<tr>
+						<th class="ver_top">Message</th>
+						<td>
+							<div class="edit-box" style="width:100%;"><textarea name="content" id="contents" placeholder="Enter your message" style="height:122px;" title="내용을 입력하세요."></textarea></div>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row" class="ver_top">Type the numbers</th>
+						<td>
+							<span id="captcha_box"></span>
+							<input type="text" name="captcha" id="captcha" class="input">
+							<label for="captcha" class="dn">자동가입방지 문자입력</label>
+							<span class="btn_sm btn_reset" id="refreshCode"> refresh</span>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="check_td">
+							<strong>Data Use Agreement</strong>
+							<input type="hidden" name="is_secret" value="n">
+							<!-- 개인정보 수집항목 동의 -->
+							<div class="policy_cont dis_inblock ml_20">
+								<div>
+									<input type="checkbox" name="nonMember" id="checkbox-nonMember" />
+									<label for="checkbox-nonMember">By checking this box, I consent to the given information being used by Good Trust to contact me about business enquiry.</label>
+									<!-- <a href="/service/usepolicy" target="_blank">View</a> -->
+								</div>
+							</div><!-- .policy_cont -->
+						</td>
+					</tr>
+				</tbody>
+			</table><!--board_write-->
+			<button id="btnSend" onclick="Common_Board.board_write(this.form); return false;" class="btn_send"><a href="javascript://" class="btn_send_main">SEND</a></button>
+		</fieldset>
+	</form>
+	<script>
+		$(document).ready(function(){
+			$('table.bbs_write td select[name="ex1_eng"] option[value="How did you hear about us?"]').prop('disabled', true);
+		});
+	</script>
+				<!-- 폼메일 스킨 스타일시트 -->
+			</div>
+			<div class="location" data-aos="fade-left">
+				<div class="main_tit">
+					<h6>Location</h6>
+				</div>
+				<div class="map_wrap">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3263.389987077498!2d129.04223391554027!3d35.12194026804795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3568ebdb663af6db%3A0x89b1da3a916899b!2s7%20Jungang-daero%20286beon-gil%2C%20Dong-gu%2C%20Busan!5e0!3m2!1sen!2skr!4v1673853048597!5m2!1sen!2skr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					<ul class="info_list">
+						<li>
+							<dl>
+								<dt class="addr">Adress.</dt>
+								<dd>10F GT Bldg, 7, Jungang-daero 286beon-gil, Dong-gu, Busan, Republic of Korea (48730)</dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt class="mail">E-mail.</dt>
+								<dd><a href="mailto:sales@goodtrust.co.kr">sales@goodtrust.co.kr</a></dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt class="tel">Tel.</dt>
+								<dd><a href="tel:051-526-4018">051-526-4018, 4019</a></dd>
+							</dl>
+						</li>
+						<li>
+							<dl>
+								<dt class="fax">Fax.</dt>
+								<dd>051-526-4028</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="btm_bnr">
+		<div class="thumb"></div>
+	</div>
+</div>
+<!-- ** layout정리190513  ** -->
+					<!-- #서브 컨텐츠 끝 -->
+
+				</div><!-- .contents -->
+				<!-- 컨텐츠 끝 .contents -->
+
+			</div><!-- .contents_box -->
+
+		</div><!-- .contents_wrap -->
+	</div><!-- .warpper -->
+<!-- ** layout정리190513  ** -->
+
+	<footer id="footer">
+		<div class="ftr_inr">
+			<div class="cont">
+				<div class="ftr_info">
+					<h2 class="logo"><img src="/data/skin/respon_default_en/images/skin/ftr_logo.png" alt=""></h2>
+					<p>CEO : Younggun Park <br>10F GT Bldg, 7, Jungang-daero 286beon-gil, Dong-gu, Busan, Republic of Korea (48730) <br>E-Mail. <a href="mailto:sales@goodtrust.co.kr">sales@goodtrust.co.kr</a> <br>Tel. <a href="tel:051-526-4018">051-526-4018, 4019</a> <br>Fax. 051-526-4028</p>
+				</div>
+				<ul class="ftr_nav">
+					<li class="">
+						<a href="/company/about">About Us</a>
+							<ul class="hd_lnb_dep2">
+								<li class="dep2"><a href="/company/about">CEO MESSAGE</a></li>
+								<li class="dep2"><a href="/company/about">CORE VALUE</a></li>
+								<li class="dep2"><a href="/company/about">HISTORY</a></li>
+								<li class="dep2"><a href="/company/about">CUSTOMERS</a></li>
+								<li class="dep2"><a href="/company/about">LOCATION</a></li>
+							</ul>
+					</li>
+					<li class="">
+						<a href="/company/oem">Businesses</a>
+							<ul class="hd_lnb_dep2">
+								<li class="dep2"><a href="/company/oem">OEM</a></li>
+								<li class="dep2"><a href="/company/oem">ODM</a></li>
+								<li class="dep2"><a href="/company/oem">PROCESS</a></li>
+								<li class="dep2"><a href="/company/oem">SUSTAINABILITY</a></li>
+							</ul>
+					</li>
+					<li class="">
+						<a href="/company/product">Products</a>
+							<ul class="hd_lnb_dep2">
+								<li class="dep2"><a href="/company/product">CLOTHING</a></li>
+								<li class="dep2"><a href="/company/product">FABRIC</a></li>
+								<li class="dep2"><a href="/company/product">TRIM</a></li>
+							</ul>
+					</li>
+					<li class="">
+						<a href="/board/board_list?code=social">Sustainability</a>
+							<ul class="hd_lnb_dep2">
+								<li class="dep2"><a href="/board/board_list?code=social">SOCIAL CONTRIBUTION</a></li>
+							</ul>
+					</li>
+					<li class="">
+						<a href="/board/board_list?code=research">Development</a>
+							<ul class="hd_lnb_dep2">
+								<li class="dep2"><a href="/board/board_list?code=research">DEVELOPMENT IDEA</a></li>
+							</ul>
+					</li>
+					<li class="">
+						<a href="/board/board_write?code=inquiry">Contact Us</a>
+							<ul class="hd_lnb_dep2">
+								<li class="dep2"><a href="/board/board_write?code=inquiry">ENQUIRY</a></li>
+								<li class="dep2"><a href="/board/board_list?code=faq">FAQ</a></li>
+							</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="copyright">
+				<p>ⓒ2023 GOODTRUST  CORPORATION ALL rights reserved. <a href="http://www.designart.co.kr/new/index.php" target="_blank">designed by DESIGNART</a></p>
+				<ul class="sns_list">
+					<li><a href="//www.instagram.com/goodtrust_official/" target="_blank"><img src="/data/skin/respon_default_en/images/skin/ftr_sns_icon01.png" alt=""></a></li>
+					<li><a href="//www.linkedin.com/company/good-trust-co--ltd-/" target="_blank"><img src="/data/skin/respon_default_en/images/skin/ftr_sns_icon02.png" alt=""></a></li>
+				</ul>
+			</div>
+		</div>
+	</footer><!-- #footer 하단영역 -->
+	<div id="popup_contents">
+<script>
+var noShow = function(checkbox){
+	var no = checkbox.value;
+	if(checkbox.checked){
+		Cookie.setCookie("popup_"+no, 'y', 1);
+	}else{
+		Cookie.setCookie("popup_"+no, 'y', -1);
+	}
+};
+var winWidth = $(window).width();
+</script>
+	</div>
+</article><!-- #wrap 전체영역 -->
+<script>
+$(document).ready(function(){
+	//애니메이션
+		AOS.init({
+			offset: 0,
+			debounceDelay: 50,
+			duration: 800,
+			throttleDelay: 99,
+			easing: 'ease-in-quart',
+		});	
+		onElementHeightChange(document.body, function(){
+			AOS.refresh();
+		});
+		function onElementHeightChange(elm, callback) {
+			var lastHeight = elm.clientHeight
+			var newHeight;
+
+			(function run() {
+				newHeight = elm.clientHeight;      
+				if (lastHeight !== newHeight) callback();
+				lastHeight = newHeight;
+				if (elm.onElementHeightChangeTimer) {
+					clearTimeout(elm.onElementHeightChangeTimer); 
+				}
+				elm.onElementHeightChangeTimer = setTimeout(run, 200);
+			})();
+		}
+});
+$(window).on('load', function () {
+	//애니메이션
+		AOS.refresh(true);
+});
+</script>
+<iframe name="ifr_processor" id="ifr_processor" title="&nbsp;" width="0" height="0" frameborder="0" style="display:none;"></iframe>
+</body>
+</html>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	// visual pause btn 
+		$('#pause-btn').on('click',function() {
+			$('.main_visual .visual_ul').slick('slickPause');
+		});
+
+	// header on
+		$('#header').addClass('main');
+		$('#header').removeClass('on');
+		$(window).scroll(function(){
+			if ( $(this).scrollTop() > 1 ) {
+				$('#header').addClass('on');
+			} else {
+				$('#header').removeClass('on');
+			}
+		});	
+	//카테고리 배너 BG
+		$(".main_cate_bnr .bnr_list > li:nth-child(1)").mouseenter(function(){
+			$(".main_cate_bnr .bnr_list").css("background","url('/data/skin/respon_default_en/images/skin/main_cate_bnr_bg.jpg') no-repeat center");
+		});
+		$(".main_cate_bnr .bnr_list > li:nth-child(2)").mouseenter(function(){
+			$(".main_cate_bnr .bnr_list").css("background","url('/data/skin/respon_default_en/images/skin/main_cate_bnr_bg2.jpg') no-repeat center");
+		});
+		$(".main_cate_bnr .bnr_list > li:nth-child(3)").mouseenter(function(){
+			$(".main_cate_bnr .bnr_list").css("background","url('/data/skin/respon_default_en/images/skin/main_cate_bnr_bg3.jpg') no-repeat center");
+		});
+	winH = $(window).height(),
+	winW = $(window).width();
+	$('.main_visual').height(winH);
+	$('.main_visual .slick-slide').height(winH);
+
+
+	$(window).resize(function(){
+		winH = $(window).height(),
+		winW = $(window).width();
+		// visual height 
+			$('.main_visual').height(winH);
+			$('.main_visual .slick-slide').height(winH);
+	});
+
+});
+
+</script>
